@@ -1,21 +1,13 @@
 import { Link } from '@remix-run/react'
 
 const footerLinks = [
-  { label: 'Blog', to: '/blog' },
-  { label: '@Tan_Stack Twitter', to: 'https://twitter.com/tan_stack' },
-  {
-    label: '@TannerLinsley Twitter',
-    to: 'https://twitter.com/tannerlinsley',
-  },
-  { label: 'GitHub', to: 'https://github.com/AlgoAcademyPL' },
-  {
-    label: 'Youtube',
-    to: 'https://www.youtube.com/user/tannerlinsley',
-  },
-  {
-    label: 'Nozzle.io - Keyword Rank Tracker',
-    to: 'https://nozzle.io',
-  },
+  { label: 'Tmp', to: '/Tmp' },
+  { label: 'Tmp', to: '/Tmp' },
+  { label: 'Tmp', to: '/Tmp' },
+  { label: 'Tmp', to: '/Tmp' },
+  { label: 'Tmp', to: '/Tmp' },
+  { label: 'Tmp', to: '/Tmp' },
+  { label: 'Tmp', to: '/Tmp' },
 ]
 
 export function Footer() {
@@ -39,7 +31,7 @@ export function Footer() {
         ))}
       </div>
       <div className={`text-center opacity-20`}>
-        &copy; {new Date().getFullYear()} Tanner Linsley
+        &copy; {new Date().getFullYear()} Algo Academy
       </div>
     </div>
   )

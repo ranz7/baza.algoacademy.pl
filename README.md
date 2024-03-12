@@ -11,7 +11,7 @@ pnpm dev
 
 The documentations for all baza.algoacademy.pl projects are hosted on [https://baza.algoacademy.pl](https://baza.algoacademy.pl)
 
-Follow these steps if you want to edit the doc pages of a project (in these steps we'll assume it's [`c`](https://github.com/AlgoAcademyPL/form)) and preview them locally :
+Follow these steps if you want to edit the doc pages of a project (in these steps we'll assume it's [`c`](https://github.com/AlgoAcademyPL/SUBJECT_NAME)) and preview them locally :
 
 1. Create a new directory called `algoacademy`.
 
@@ -33,7 +33,7 @@ git clone git@github.com:algoacademy/SUBJECT_NAME.git
 > ```
 > algoacademy/
 >    |
->    +-- form/
+>    +-- SUBJECT_NAME/
 >    |
 >    +-- baza.algoacademy.pl/
 > ```
@@ -50,7 +50,7 @@ pnpm i
 pnpm dev
 ```
 
-4. Now you can visit http://localhost:3000/form/latest/docs/overview in the browser and see the changes.
+4. Now you can visit http://localhost:3000/SUBJECT_NAME/latest/docs/overview in the browser and see the changes.
 
 > [!NOTE]
 > The updated pages need to be manually reloaded in the browser.
