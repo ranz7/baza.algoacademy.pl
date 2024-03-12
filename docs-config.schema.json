@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AlgoAcademy/baza.algoacademy.pl/blob/main/docs-config.schema.json",
+  "title": "AlgoAcademy docs config",
+  "description": "Config file for the documentation of a algo academy project.",
+  "type": "object",
+  "required": [
+    "docSearch",
+    "menu"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "docSearch": {
+      "description": "Data for Algolia Search.",
+      "type": "object",
+      "required": [
+        "appId",
+        "apiKey",
+        "indexName"
+      ],
+      "properties": {
+        "appId": {
+          "type": "string"
+        },
+        "apiKey": {
+          "type": "string"
+        },
+        "indexName": {
+          "type": "string"
+        }
+      }
+    },
+    "menu": {
+      "description": "Doc pages ",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "children"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "label",
+                "to"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "to": {
+                  "type": "string"
+                },
+                "badge": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "users": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
