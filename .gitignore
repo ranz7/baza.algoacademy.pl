@@ -10,6 +10,8 @@ yarn.lock
 .idea
 .git
 
+.env.development
+
 /build/
 /api/
 /server/build
