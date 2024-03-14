@@ -1,8 +1,5 @@
-import { Outlet, isRouteErrorResponse, useRouteError } from '@remix-run/react'
-import styles from '~/styles/app.css'
-import carbonStyles from '~/styles/carbon.css'
-import prismThemeLight from '~/styles/prismThemeLight.css'
-import prismThemeDark from '~/styles/prismThemeDark.css'
+import { isRouteErrorResponse, Outlet, useRouteError } from '@remix-run/react'
+import styles from '~/styles/tailwind.css'
 import docSearchStyles from '@docsearch/css/dist/style.css'
 import { seo } from '~/utils/seo'
 import { RootDocument } from '~/components/RootDocument'
@@ -19,44 +16,35 @@ export const meta: MetaFunction = () => {
 
 export const links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: styles },
+    { rel: 'stylesheet', href: "https://rsms.me/inter/inter.css" },
+
     {
       rel: 'stylesheet',
-      href: prismThemeLight,
-      media: '(prefers-color-scheme: light)',
+      href: docSearchStyles
     },
     {
       rel: 'stylesheet',
-      href: prismThemeDark,
-      media: '(prefers-color-scheme: dark)',
-    },
-    {
-      rel: 'stylesheet',
-      href: docSearchStyles,
-    },
-    {
-      rel: 'stylesheet',
-      href: carbonStyles,
+      href: styles
     },
     {
       rel: 'apple-touch-icon',
       sizes: '180x180',
-      href: '/favicons/apple-touch-icon.png',
+      href: '/favicons/apple-touch-icon.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
       sizes: '32x32',
-      href: '/favicons/favicon-32x32.png',
+      href: '/favicons/favicon-32x32.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
       sizes: '16x16',
-      href: '/favicons/favicon-16x16.png',
+      href: '/favicons/favicon-16x16.png'
     },
     { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
-    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'icon', href: '/favicon.ico' }
   ]
 }
 
@@ -75,7 +63,7 @@ export const ErrorBoundary = () => {
   if (isRouteErrorResponse(error)) {
     return (
       <RootDocument title={`${error.status} ${error.statusText}`}>
-        <div className="h-[50vh] flex flex-col items-center justify-center gap-6">
+        <div className='h-[50vh] flex flex-col items-center justify-center gap-6'>
           <DefaultCatchBoundary
             status={error.status}
             statusText={error.statusText}
@@ -97,7 +85,7 @@ export const ErrorBoundary = () => {
   }
 
   return (
-    <RootDocument title="Error!">
+    <RootDocument title='Error!'>
       <div>
         <h1>There was an error!</h1>
         <p>{errorMessage}</p>

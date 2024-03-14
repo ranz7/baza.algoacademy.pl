@@ -17,7 +17,7 @@ export const loader = async (context: LoaderFunctionArgs) => {
     !context.request.url.includes('/SUBJECT_NAME/v') &&
     !context.request.url.includes('/SUBJECT_NAME/latest')
   ) {
-    return redirect(`${new URL(context.request.url).origin}/SUBJECT_NAME/latest`)
+    return redirect(`${new URL(context.request.url).origin}/SUBJECT_NAME/latest/docs/overview`)
   }
 
   return new Response('OK')
@@ -27,7 +27,7 @@ export default function RouteReactTable() {
   return (
     <>
       <Outlet />
-      <Scarf id="dd278e06-bb3f-420c-85c6-6e42d14d8f61" />
     </>
   )
+  // <Scarf id="dd278e06-bb3f-420c-85c6-6e42d14d8f61" />
 }

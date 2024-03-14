@@ -1,7 +1,7 @@
 import reactLogo from '~/images/react-logo.svg'
 import type { AvailableOptions } from '~/components/Select'
 
-export const repo = 'algoacademy/SUBJECT_NAME'
+export const repo = 'AlgoAcademyPL/SUBJECT_NAME'
 
 export const latestBranch = 'main'
 export const latestVersion = 'v0'
@@ -20,5 +20,5 @@ export type Framework = keyof typeof frameworks
 export function getBranch(argVersion?: string) {
   const version = argVersion || latestVersion
 
-  return ['latest', latestVersion].includes(version) ? latestBranch : version
+  return latestBranch
 }

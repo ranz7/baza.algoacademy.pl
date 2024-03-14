@@ -14,9 +14,6 @@ export const DocsLogo = (props: Props) => {
 
   return (
     <>
-      <Link to="/" className="font-light">
-        AlgoAcademy
-      </Link>
       <Link to="../../" className={`font-bold`}>
         <span className={`${gradientText}`}>{name}</span>{' '}
         <span className="text-sm align-super">{version}</span>

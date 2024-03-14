@@ -1,6 +1,7 @@
 import { FaEdit } from 'react-icons/fa'
 import { DocTitle } from '~/components/DocTitle'
 import { RenderMarkdown } from '~/components/RenderMarkdown'
+import Header from '~/components/Header'
 
 export function Doc({
   title,

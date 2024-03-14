@@ -38,12 +38,10 @@ export default function DocsRoute() {
   return (
     <DocsLayout
       name="SUBJECT_NAME"
-      version={version === 'latest' ? latestVersion : version!}
       colorFrom={colorFrom}
       colorTo={colorTo}
       textColor={textColor}
       config={config}
-      availableVersions={availableVersions}
       repo={repo}
     >
       <Outlet />
