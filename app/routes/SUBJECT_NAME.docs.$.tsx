@@ -1,10 +1,10 @@
 import { useLoaderData, useParams } from '@remix-run/react'
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node'
 import { getBranch, repo } from '~/projects/SUBJECT_NAME'
-import { DefaultErrorBoundary } from '~/components/DefaultErrorBoundary'
 import { seo } from '~/utils/seo'
 import { loadDocs } from '~/utils/docs'
 import { Doc } from '~/components/docs/Doc'
+import { DefaultErrorBoundary } from '~/components/other/DefaultErrorBoundary'
 
 export const loader = async (context: LoaderFunctionArgs) => {
   const { '*': docsPath, version } = context.params

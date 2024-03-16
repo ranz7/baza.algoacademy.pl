@@ -1,12 +1,16 @@
-import type { FC, HTMLProps } from 'react'
-import ReactMarkdown from 'react-markdown'
-import rehypeSlug from 'rehype-slug'
-import rehypeRaw from 'rehype-raw'
+import type { HTMLProps } from 'react'
+import { useState } from 'react'
 import { MarkdownLink } from '~/components/docs/md/MarkdownLink'
 import { CodeBlock } from '~/components/docs/md/CodeBlock'
 import { Prose } from '~/components/docs/Prose'
 import clsx from 'clsx'
-import remarkGfm from 'remark-gfm'
+import Markdown from 'markdown-to-jsx'
+import { Callout } from '~/components/docs/md/Callout'
+import MdYouTube from '~/components/docs/md/MdYouTube'
+import MdImage from '~/components/docs/md/MdImage'
+import { useLocation } from '@remix-run/react'
+import MdLatex from '~/components/docs/md/MdLatex'
+import MdBigLatex from '~/components/docs/md/MdBigLatex'
 
 const CustomHeading = ({
   Comp,
@@ -15,9 +19,23 @@ const CustomHeading = ({
 }: HTMLProps<HTMLHeadingElement> & {
   Comp: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }) => {
-  if (id) {
+  const [copied, setCopied] = useState(false)
+  const location = useLocation()
+
+  if (id && ['h1', 'h2'].includes(Comp)) {
     return (
-      <a href={`#${id}`} className={`anchor-heading`}>
+      <a
+        href={`#${id}`}
+        onClick={(e) => {
+          e.preventDefault()
+          setCopied(true)
+          navigator.clipboard.writeText(
+            window.location.href.replace(location.hash, `#${id}`)
+          )
+          setTimeout(() => setCopied(false), 1000)
+        }}
+        className={clsx(copied ? `anchor-copied` : `anchor-heading`)}
+      >
         <Comp id={id} {...props} />
       </a>
     )
@@ -36,7 +54,7 @@ const makeHeading =
       />
     )
 
-const defaultComponents: Record<string, FC> = {
+const defaultComponents: any = {
   a: MarkdownLink,
   pre: CodeBlock,
   h1: makeHeading('h1'),
@@ -45,7 +63,12 @@ const defaultComponents: Record<string, FC> = {
   h4: makeHeading('h4'),
   h5: makeHeading('h5'),
   h6: makeHeading('h6'),
-  iframe: (props) => <iframe {...props} className="w-full" />,
+  Info: { component: Callout, props: { type: 'note' } },
+  Warning: { component: Callout, props: { type: 'warning' } },
+  Latex: MdLatex,
+  BigLatex: MdBigLatex,
+  img: MdImage,
+  YouTube: MdYouTube,
   code: ({ className = '', ...props }: React.HTMLProps<HTMLElement>) => {
     return (
       <code
@@ -62,16 +85,12 @@ type Props = {
   children: string
 }
 
-export const RenderMarkdown = (props: Props) => {
+export const MarkdownRenderer = (props: Props) => {
   return (
     <Prose>
-      <ReactMarkdown
-        plugins={[remarkGfm]}
-        rehypePlugins={[rehypeSlug, rehypeRaw]}
-        components={{ ...defaultComponents }}
-      >
+      <Markdown options={{ overrides: defaultComponents }}>
         {props.children}
-      </ReactMarkdown>
+      </Markdown>
     </Prose>
   )
 }

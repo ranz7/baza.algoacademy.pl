@@ -16,16 +16,10 @@ export function DefaultCatchBoundary({
   let message
   switch (status) {
     case 401:
-      message = (
-        <p>
-          Oops! Nie masz dostępu do odwiedzenia tej strony.
-        </p>
-      )
+      message = <p>Oops! Nie masz dostępu do odwiedzenia tej strony.</p>
       break
     case 404:
-      message = (
-        <p>Oops! Strona nie istnieje.</p>
-      )
+      message = <p>Oops! Strona nie istnieje.</p>
       break
 
     default:
@@ -46,7 +40,7 @@ export function DefaultCatchBoundary({
           to="/"
           className={`py-2 px-4 bg-gray-600 dark:bg-gray-700 rounded text-white uppercase font-extrabold`}
         >
-          AlgoAcademy Home
+          Baza AlgoAcademy Home
         </Link>
       ) : null}
     </div>

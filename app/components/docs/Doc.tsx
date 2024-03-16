@@ -1,6 +1,6 @@
 import { FaEdit } from 'react-icons/fa'
-import { RenderMarkdown } from '~/components/docs/md/RenderMarkdown'
-import { LinkOrA } from '~/components/LinkOrA'
+import { MarkdownRenderer } from '~/components/docs/md/MarkdownRenderer'
+import { LinkOrA } from '~/components/other/LinkOrA'
 
 export function Doc({
   title,
@@ -36,7 +36,7 @@ export function Doc({
       <div className="h-9" />
       <div className="h-px bg-gray-500 opacity-20" />
       <div className="h-9" />
-      <RenderMarkdown>{content}</RenderMarkdown>
+      <MarkdownRenderer>{content}</MarkdownRenderer>
       <div className="h-12" />
       <div className="w-full h-px bg-gray-500 opacity-30" />
       <div className="py-4 opacity-70">

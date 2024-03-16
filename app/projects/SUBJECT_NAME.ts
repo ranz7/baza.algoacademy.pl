@@ -1,5 +1,5 @@
 import reactLogo from '~/images/react-logo.svg'
-import type { AvailableOptions } from '~/components/Select'
+import type { AvailableOptions } from '~/components/other/Select'
 
 export const repo = 'AlgoAcademyPL/SUBJECT_NAME'
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
-import { LinkOrA } from '~/components/LinkOrA'
+import { LinkOrA } from '~/components/other/LinkOrA'
 import { CloseIcon } from '~/icons/CloseIcon'
 import { MenuIcon } from '~/icons/MenuIcon'
 import { Navigation } from '~/components/header/Navigation'

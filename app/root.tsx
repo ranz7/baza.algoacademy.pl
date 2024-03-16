@@ -4,13 +4,14 @@ import docSearchStyles from '@docsearch/css/dist/style.css'
 import prismThemeLight from '~/styles/prismThemeLight.css'
 import prismThemeDark from '~/styles/prismThemeDark.css'
 import { seo } from '~/utils/seo'
-import { RootDocument } from '~/components/RootDocument'
-import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import type { LinksFunction, MetaFunction } from '@remix-run/node'
+import { RootDocument } from '~/components/other/RootDocument'
+import { DefaultCatchBoundary } from '~/components/other/DefaultCatchBoundary'
 
 export const meta: MetaFunction = () => {
   return seo({
-    title: 'AlgoAcademy | Rewolucjonizujemy edukację informatyczną w Polsce',
+    title:
+      'Baza AlgoAcademy | Rewolucjonizujemy edukację informatyczną w Polsce',
     description: `Rewolucjonizujemy edukację informatyczną w Polsce.`,
     keywords: 'Algorytmy, Programowanie, Edukacja, Informatyka, AlgoAcademy',
   })
@@ -31,11 +32,15 @@ export const links: LinksFunction = () => {
     },
     {
       rel: 'stylesheet',
+      href: styles,
+    },
+    {
+      rel: 'stylesheet',
       href: docSearchStyles,
     },
     {
       rel: 'stylesheet',
-      href: styles,
+      href: '//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css',
     },
     {
       rel: 'apple-touch-icon',

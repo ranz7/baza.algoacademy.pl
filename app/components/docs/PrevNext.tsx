@@ -1,4 +1,4 @@
-import { LinkOrA } from '~/components/LinkOrA'
+import { LinkOrA } from '~/components/other/LinkOrA'
 import * as React from 'react'
 
 const PrevNext = ({ children, prevItem, nextItem }: any) => {

@@ -5,9 +5,10 @@ import { seo } from '~/utils/seo'
 
 export const meta: MetaFunction = () => {
   return seo({
-    title: 'AlgoAcademy SUBJECT_NAME | SUBJECT_NAME',
+    title: ' SUBJECT_NAME AlgoAcademy',
     description: 'Headless range and multi-range slider utilities, React',
-    image: 'https://github.com/AlgoAcademyPL/SUBJECT_NAME/raw/main/media/header.png',
+    image:
+      'https://github.com/AlgoAcademyPL/SUBJECT_NAME/raw/main/media/header.png',
   })
 }
 
@@ -16,7 +17,9 @@ export const loader = async (context: LoaderFunctionArgs) => {
     !context.request.url.includes('/SUBJECT_NAME/v') &&
     !context.request.url.includes('/SUBJECT_NAME/')
   ) {
-    return redirect(`${new URL(context.request.url).origin}/SUBJECT_NAME/docs/overview`)
+    return redirect(
+      `${new URL(context.request.url).origin}/SUBJECT_NAME/docs/overview`
+    )
   }
 
   return new Response('OK')

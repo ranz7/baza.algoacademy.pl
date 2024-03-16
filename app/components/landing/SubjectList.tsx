@@ -9,7 +9,7 @@ import SqlLogo from 'app/icons/SqlLogo'
 import { TbBinaryTree } from 'react-icons/tb'
 import { AiOutlineRobot } from 'react-icons/ai'
 import { BiBrain } from 'react-icons/bi'
-import { LinkOrA } from '~/components/LinkOrA'
+import { LinkOrA } from '~/components/other/LinkOrA'
 
 const actions = [
   {

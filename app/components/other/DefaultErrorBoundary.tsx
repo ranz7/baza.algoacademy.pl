@@ -1,5 +1,5 @@
-import { Link, isRouteErrorResponse, useRouteError } from '@remix-run/react'
-import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
+import { isRouteErrorResponse, Link, useRouteError } from '@remix-run/react'
+import { DefaultCatchBoundary } from '~/components/other/DefaultCatchBoundary'
 
 export const DefaultErrorBoundary = () => {
   const error = useRouteError()
@@ -34,7 +34,7 @@ export const DefaultErrorBoundary = () => {
         to="/"
         className={`py-2 px-4 bg-gray-600 dark:bg-gray-700 rounded text-white uppercase font-extrabold`}
       >
-        AlgoAcademy Home
+        Baza AlgoAcademy Home
       </Link>
     </div>
   )

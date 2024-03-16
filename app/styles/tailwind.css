@@ -11,6 +11,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .neon-hover {
     /* Add transition for smooth effect */
     transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
@@ -155,6 +159,28 @@
     }
 
     .anchor-heading + * {
+        margin-top: 0 !important;
+    }
+
+
+    .anchor-copied {
+        text-decoration: none !important;
+    }
+
+    .anchor-copied > *:after {
+        content: 'copied!';
+        @apply relative text-sm opacity-0 ml-2 transition duration-100;
+    }
+
+    .anchor-copied:hover > *:after {
+        @apply opacity-50;
+    }
+
+    :has(+ .anchor-copied) {
+        margin-bottom: 0 !important;
+    }
+
+    .anchor-copied + * {
         margin-top: 0 !important;
     }
 }
