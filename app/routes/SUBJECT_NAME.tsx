@@ -1,7 +1,6 @@
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node'
 import { redirect } from '@remix-run/node'
 import { Outlet } from '@remix-run/react'
-import { Scarf } from '~/components/Scarf'
 import { seo } from '~/utils/seo'
 
 export const meta: MetaFunction = () => {
@@ -15,9 +14,9 @@ export const meta: MetaFunction = () => {
 export const loader = async (context: LoaderFunctionArgs) => {
   if (
     !context.request.url.includes('/SUBJECT_NAME/v') &&
-    !context.request.url.includes('/SUBJECT_NAME/latest')
+    !context.request.url.includes('/SUBJECT_NAME/')
   ) {
-    return redirect(`${new URL(context.request.url).origin}/SUBJECT_NAME/latest/docs/overview`)
+    return redirect(`${new URL(context.request.url).origin}/SUBJECT_NAME/docs/overview`)
   }
 
   return new Response('OK')

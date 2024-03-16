@@ -1,10 +1,12 @@
-import { CodeBlock } from '~/components/CodeBlock'
-import { MarkdownLink } from '~/components/MarkdownLink'
 import type { FC, HTMLProps } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import { MarkdownLink } from '~/components/docs/md/MarkdownLink'
+import { CodeBlock } from '~/components/docs/md/CodeBlock'
+import { Prose } from '~/components/docs/Prose'
+import clsx from 'clsx'
+import remarkGfm from 'remark-gfm'
 
 const CustomHeading = ({
   Comp,
@@ -24,13 +26,13 @@ const CustomHeading = ({
 }
 
 const makeHeading =
-  (type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6') =>
+  (type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6', additionalProps?: string) =>
   (props: HTMLProps<HTMLHeadingElement>) =>
     (
       <CustomHeading
         Comp={type}
         {...props}
-        className={`${props.className ?? ''} inline-block`}
+        className={clsx(props.className, additionalProps)}
       />
     )
 
@@ -58,19 +60,18 @@ const defaultComponents: Record<string, FC> = {
 
 type Props = {
   children: string
-  components?: Record<string, FC>
 }
 
 export const RenderMarkdown = (props: Props) => {
-  const { components, children } = props
-
   return (
-    <ReactMarkdown
-      plugins={[remarkGfm]}
-      rehypePlugins={[rehypeSlug, rehypeRaw]}
-      components={{ ...defaultComponents, ...components }}
-    >
-      {children}
-    </ReactMarkdown>
+    <Prose>
+      <ReactMarkdown
+        plugins={[remarkGfm]}
+        rehypePlugins={[rehypeSlug, rehypeRaw]}
+        components={{ ...defaultComponents }}
+      >
+        {props.children}
+      </ReactMarkdown>
+    </Prose>
   )
 }

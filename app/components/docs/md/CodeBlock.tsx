@@ -1,10 +1,10 @@
-import { useState, type ReactNode } from 'react'
+import { type ReactNode, useState } from 'react'
 import invariant from 'tiny-invariant'
 import type { Language } from 'prism-react-renderer'
 import { Highlight, Prism } from 'prism-react-renderer'
 import { FaCopy } from 'react-icons/fa'
 import { svelteHighlighter } from '~/utils/svelteHighlighter'
-// Add back additional language support after `prism-react` upgrade
+
 ;(typeof global !== 'undefined' ? global : window).Prism = Prism
 require('prismjs/components/prism-diff')
 require('prismjs/components/prism-bash')
@@ -39,7 +39,7 @@ export const CodeBlock = ({ children }: Props) => {
     ? child.props.children[0]
     : child.props.children
   return (
-    <div className="w-full max-w-full relative">
+    <div className="bgw-full max-w-full relative">
       <button
         className="absolute right-1 top-3 z-10 p-2 group flex items-center"
         onClick={() => {

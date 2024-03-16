@@ -1,17 +1,15 @@
-import { Outlet, json, useLoaderData } from '@remix-run/react'
+import { json, Outlet, useLoaderData } from '@remix-run/react'
 import {
-  repo,
-  getBranch,
-  colorTo,
-  latestVersion,
   colorFrom,
+  colorTo,
+  getBranch,
+  repo,
   textColor,
-  availableVersions,
 } from '~/projects/SUBJECT_NAME'
 import { seo } from '~/utils/seo'
-import { DocsLayout } from '~/components/DocsLayout'
 import { getAlgoAcademyConfig } from '~/utils/config'
-import type { MetaFunction, LoaderFunctionArgs } from '@remix-run/node'
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node'
+import { DocsLayout } from '~/components/docs/DocsLayout'
 
 export const loader = async (context: LoaderFunctionArgs) => {
   const { version } = context.params

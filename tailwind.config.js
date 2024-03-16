@@ -4,6 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ['./app/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
+
   theme: {
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

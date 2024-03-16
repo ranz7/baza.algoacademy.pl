@@ -1,17 +1,7 @@
-import Header from '~/components/Header'
-
-import {
-  AcademicCapIcon,
-  BanknotesIcon,
-  CheckBadgeIcon,
-  ClockIcon,
-  ReceiptRefundIcon,
-  UsersIcon
-} from '@heroicons/react/24/outline'
-import discordImage from '~/images/discord-logo-white.svg'
-import LandingText from '~/components/LandingText'
-import SubjectList from '~/components/SubjectList'
-import DiscordPromo from '~/components/DiscordPromo'
+import LandingText from '~/components/landing/LandingText'
+import Header from '~/components/header/Header'
+import SubjectList from '~/components/landing/SubjectList'
+import DiscordPromo from '~/components/landing/DiscordPromo'
 
 export default function Page() {
   return (
@@ -19,7 +9,6 @@ export default function Page() {
       <Header />
       <LandingText />
       <SubjectList />
-      <div className={'my-20'}/>
       <DiscordPromo />
     </div>
   )

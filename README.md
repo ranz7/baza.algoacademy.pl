@@ -50,7 +50,7 @@ pnpm i
 pnpm dev
 ```
 
-4. Now you can visit http://localhost:3000/SUBJECT_NAME/latest/docs/overview in the browser and see the changes.
+4. Now you can visit http://localhost:3000/SUBJECT_NAME/docs/overview in the browser and see the changes.
 
 > [!NOTE]
 > The updated pages need to be manually reloaded in the browser.

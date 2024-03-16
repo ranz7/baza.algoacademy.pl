@@ -40,6 +40,7 @@ export async function loadDocs({
   return json(
     {
       title: frontMatter.data?.title,
+      section: frontMatter.data?.section,
       description,
       filePath,
       content: frontMatter.content,
