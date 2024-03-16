@@ -32,6 +32,7 @@ export const CodeBlock = ({ children }: Props) => {
   invariant(!!children, 'children is required')
   const [copied, setCopied] = useState(false)
   const child = Array.isArray(children) ? children[0] : children
+  console.log(JSON.stringify(children.className))
   const className = child.props.className || ''
   const userLang = getLanguageFromClassName(className)
   const lang = isLanguageSupported(userLang) ? userLang : 'bash'
