@@ -1,0 +1,223 @@
+@import 'fonts.css';
+@import 'prism.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    [inert] ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.neon-hover {
+    /* Add transition for smooth effect */
+    transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.neon-hover:hover {
+    /* Hide the initial border */
+    border-color: transparent;
+
+    /* Updated glowing effect with darker blue and adjusted parameters */
+    box-shadow: 0 0 5px rgba(0, 97, 162, 0.3),
+    0 0 10px rgba(0, 150, 255, 0.1),
+    0 0 15px rgba(0, 150, 255, 0.1),
+    inset 0 0 2px rgba(0, 150, 255, 0.2);
+
+    background-color: rgb(250, 251, 255);
+    /* Gradient border workaround with darker blue */
+    position: relative;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 50%, 70% {
+        transform: translateX(-5px);
+    }
+    20%, 60% {
+        transform: translateX(5px);
+    }
+    90% {
+        transform: translateX(-3px);
+    }
+    80% {
+        transform: translateX(3px);
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body {
+        @apply text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-200;
+    }
+
+    .using-mouse * {
+        outline: none !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        * {
+            color-scheme: dark;
+        }
+    }
+    /* * {
+      scrollbar-color: theme(colors.gray.500) theme(colors.gray.100);
+    }
+
+    *::-webkit-scrollbar,
+    * scrollbar {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    *::-webkit-scrollbar-track,
+    * scrollbar-track {
+      background: theme(colors.gray.100);
+    }
+
+    *::-webkit-scrollbar-thumb,
+    * scrollbar-thumb {
+      background: theme(colors.gray.300);
+      border-radius: 0.5rem;
+      border: 3px solid theme(colors.gray.100);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      * {
+        scrollbar-color: theme(colors.gray.500) theme(colors.gray.800);
+      }
+
+      *::-webkit-scrollbar,
+      * scrollbar {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      *::-webkit-scrollbar-track,
+      * scrollbar-track {
+        background: theme(colors.gray.800);
+      }
+
+      *::-webkit-scrollbar-thumb,
+      * scrollbar-thumb {
+        background: theme(colors.gray.600);
+        border-radius: 0.5rem;
+        border: 3px solid theme(colors.gray.800);
+      }
+    } */
+    [disabled] {
+        @apply opacity-50 pointer-events-none;
+    }
+
+    #docs-details summary::-webkit-details-marker {
+        display: none;
+    }
+
+    #docs-details .icon-close {
+        display: none;
+    }
+
+    #docs-details[open] .icon-close {
+        display: block;
+    }
+
+    #docs-details[open] .icon-open {
+        display: none;
+    }
+
+    #docs-details[open] > summary + * {
+        height: 80vh;
+    }
+
+    .anchor-heading {
+        text-decoration: none !important;
+    }
+
+    .anchor-heading > *:after {
+        content: '#';
+        @apply relative opacity-0 ml-2 transition duration-100;
+    }
+
+    .anchor-heading:hover > *:after {
+        @apply opacity-50;
+    }
+
+    :has(+ .anchor-heading) {
+        margin-bottom: 0 !important;
+    }
+
+    .anchor-heading + * {
+        margin-top: 0 !important;
+    }
+
+
+    .anchor-copied {
+        text-decoration: none !important;
+    }
+
+    .anchor-copied > *:after {
+        content: 'copied!';
+        @apply relative text-sm opacity-0 ml-2 transition duration-100;
+    }
+
+    .anchor-copied:hover > *:after {
+        @apply opacity-50;
+    }
+
+    :has(+ .anchor-copied) {
+        margin-bottom: 0 !important;
+    }
+
+    .anchor-copied + * {
+        margin-top: 0 !important;
+    }
+}
+
+.carbon-small {
+    pointer-events: none;
+}
+
+.carbon-small #carbonads {
+    @apply pointer-events-none;
+}
+
+.carbon-small .carbon-outer {
+    @apply pointer-events-none;
+}
+
+.carbon-small .carbon-wrap {
+    @apply flex flex-col;
+}
+
+.carbon-small .carbon-wrap .carbon-img {
+    @apply w-[50%] pt-2 !pointer-events-auto rounded-tr-lg border-t border-r border-gray-500 border-opacity-10 overflow-hidden;
+}
+
+.carbon-small .carbon-wrap .carbon-img img {
+    @apply w-full !max-w-full;
+}
+
+.carbon-small .carbon-wrap .carbon-text {
+    @apply bg-white dark:bg-gray-800 rounded-tr-lg !pb-6 !m-0 !pointer-events-auto border-t border-r border-gray-500 border-opacity-10;
+}
+
+.carbon-small .carbon-wrap .carbon-poweredby {
+    @apply absolute bottom-0 right-0;
+}
+
+code[class*='language-'] {
+    white-space: pre-wrap;
+    word-break: break-all;
+}

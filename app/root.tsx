@@ -1,34 +1,30 @@
-import { Outlet, isRouteErrorResponse, useRouteError } from '@remix-run/react'
-import styles from '~/styles/app.css'
-import carbonStyles from '~/styles/carbon.css'
+import { isRouteErrorResponse, Outlet, useRouteError } from '@remix-run/react'
+import styles from '~/styles/tailwind.css'
+import docSearchStyles from '@docsearch/css/dist/style.css'
 import prismThemeLight from '~/styles/prismThemeLight.css'
 import prismThemeDark from '~/styles/prismThemeDark.css'
-import docSearchStyles from '@docsearch/css/dist/style.css'
+import custom from '~/styles/custom.css'
 import { seo } from '~/utils/seo'
-import { RootDocument } from '~/components/RootDocument'
-import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import type { LinksFunction, MetaFunction } from '@remix-run/node'
+import { RootDocument } from '~/components/other/RootDocument'
+import { DefaultCatchBoundary } from '~/components/other/DefaultCatchBoundary'
 
 export const meta: MetaFunction = () => {
   return seo({
-    title: 'AlgoAcademy | Rewolucjonizujemy edukację informatyczną w Polsce',
+    title:
+      'Baza AlgoAcademy | Rewolucjonizujemy edukację informatyczną w Polsce',
     description: `Rewolucjonizujemy edukację informatyczną w Polsce.`,
-    keywords: 'Algorytmy, Programowanie, Edukacja, Informatyka, AlgoAcademy'
+    keywords: 'Algorytmy, Programowanie, Edukacja, Informatyka, AlgoAcademy',
   })
 }
 
 export const links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: styles },
+    { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
+
     {
       rel: 'stylesheet',
-      href: prismThemeLight,
-      media: '(prefers-color-scheme: light)',
-    },
-    {
-      rel: 'stylesheet',
-      href: prismThemeDark,
-      media: '(prefers-color-scheme: dark)',
+      href: styles,
     },
     {
       rel: 'stylesheet',
@@ -36,7 +32,7 @@ export const links: LinksFunction = () => {
     },
     {
       rel: 'stylesheet',
-      href: carbonStyles,
+      href: '//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css',
     },
     {
       rel: 'apple-touch-icon',
@@ -57,6 +53,18 @@ export const links: LinksFunction = () => {
     },
     { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
     { rel: 'icon', href: '/favicon.ico' },
+    {
+      rel: 'stylesheet',
+      href: prismThemeDark,
+    },
+    {
+      rel: 'stylesheet',
+      href: prismThemeLight,
+    },
+    {
+      rel: 'stylesheet',
+      href: custom,
+    },
   ]
 }
 

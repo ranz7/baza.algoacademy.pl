@@ -22,7 +22,7 @@ async function fetchRemote(
     `${owner}/${repo}/${ref}/${filepath}`,
     'https://raw.githubusercontent.com/'
   ).href
-
+  console.log(href)
   const response = await fetch(href, {
     headers: { 'User-Agent': `docs:${owner}/${repo}` },
   })
@@ -184,6 +184,7 @@ export async function fetchRepoFile(
 }
 
 export function extractFrontMatter(content: string) {
+  // https://github.com/jonschlinkert/gray-matter/tree/master
   return graymatter.default(content, {
     excerpt: (file: any) =>
       (file.excerpt = file.content.split('\n').slice(0, 4).join('\n')),

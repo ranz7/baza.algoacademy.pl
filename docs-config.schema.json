@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/AlgoAcademy/baza.algoacademy.pl/blob/main/docs-config.schema.json",
-  "title": "AlgoAcademy docs config",
+  "title": "Baza AlgoAcademy docs config",
   "description": "Config file for the documentation of a algo academy project.",
   "type": "object",
   "required": [
