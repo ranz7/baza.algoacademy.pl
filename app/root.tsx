@@ -3,6 +3,7 @@ import styles from '~/styles/tailwind.css'
 import docSearchStyles from '@docsearch/css/dist/style.css'
 import prismThemeLight from '~/styles/prismThemeLight.css'
 import prismThemeDark from '~/styles/prismThemeDark.css'
+import custom from '~/styles/custom.css'
 import { seo } from '~/utils/seo'
 import type { LinksFunction, MetaFunction } from '@remix-run/node'
 import { RootDocument } from '~/components/other/RootDocument'
@@ -59,6 +60,10 @@ export const links: LinksFunction = () => {
     {
       rel: 'stylesheet',
       href: prismThemeLight,
+    },
+    {
+      rel: 'stylesheet',
+      href: custom,
     },
   ]
 }

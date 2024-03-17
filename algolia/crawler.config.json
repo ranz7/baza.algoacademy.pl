@@ -1,0 +1,37 @@
+{
+  "index_name": "SUBJECT_NAME",
+  "start_urls": [
+    {
+      "url": "https://baza.algoacademy.pl/SUBJECT_NAME/docs/",
+      "selectors_key": "SUBJECT_NAME",
+      "tags": [
+        "SUBJECT_NAME"
+      ]
+    },
+    "https://baza.algoacademy.pl/"
+  ],
+  "selectors": {
+    "SUBJECT_NAME": {
+      "lvl0": {
+        "selector": "  ",
+        "default_value": "SUBJECT NAME"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "text": "article p,article li"
+    },
+    "default": {
+      "lvl0": {
+        "selector": "  ",
+        "default_value": "Artykuł"
+      },
+      "lvl1": "article h1",
+      "lvl2": ".prose h2",
+      "lvl3": ".prose h3",
+      "lvl4": "article h4",
+      "text": "article p,article li"
+    }
+  }
+}

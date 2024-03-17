@@ -27,10 +27,10 @@ const MdImage = (
   }
 
   return (
-    <div className={`flex-col my-5  flex justify-center m-auto`}>
+    <span className={`flex-col my-5  flex justify-center m-auto`}>
       <img alt={'Not found'} {...props} className="self-center mb-2 mt-0" />
       {props.title && <span className="self-center">{props.title}</span>}
-    </div>
+    </span>
   )
 }
 

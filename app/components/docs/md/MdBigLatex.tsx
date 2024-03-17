@@ -16,19 +16,19 @@ const styles = {
 //   warning: WarningIcon,
 const MdLatex = (props: { title: string; text: string }) => {
   return (
-    <div className={`my-8 table justify-center m-auto`}>
-      <div
+    <span className={`my-8 table justify-center m-auto`}>
+      <span
         className={clsx('items-center flex rounded-3xl p-6', styles.container)}
       >
         <DynamicIcon icon="lightbulb" className="h-8 w-8 flex-none" />
-        <div className="ml-4">
+        <span className="ml-4">
           <span className={'self-center text-2xl'}>
             <Latex>{props?.text}</Latex>
           </span>
-        </div>
-      </div>
-      {props.title && <h5 className="text-center">{props.title}</h5>}
-    </div>
+        </span>
+      </span>
+      {props.title && <span className="text-center">{props.title}</span>}
+    </span>
   )
 }
 

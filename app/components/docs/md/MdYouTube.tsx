@@ -13,7 +13,7 @@ const YoutubeEmbed = ({
   title?: string
 }) => {
   return (
-    <div className="flex-col my-5 video-responsive flex justify-center m-auto">
+    <span className="flex-col my-5 video-responsive flex justify-center m-auto">
       <YouTube
         videoId={linkOrId} // defaults -> ''
         title={'string'} // defaults -> ''
@@ -28,8 +28,8 @@ const YoutubeEmbed = ({
         }}
         className="self-center"
       />
-      {title && <h5 className="self-center">{title}</h5>}
-    </div>
+      {title && <span className="self-center ">{title}</span>}
+    </span>
   )
 }
 

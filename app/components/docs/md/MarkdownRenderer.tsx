@@ -65,6 +65,7 @@ const defaultComponents: any = {
   h6: makeHeading('h6'),
   Info: { component: Callout, props: { type: 'note' } },
   Warning: { component: Callout, props: { type: 'warning' } },
+  // EVERYTHING IN SUB COMPONENTS SHOULD BE LESS THAN P (span,li etc)
   Latex: MdLatex,
   BigLatex: MdBigLatex,
   img: MdImage,
