@@ -1,6 +1,9 @@
-import { FaEdit } from 'react-icons/fa'
-import { MarkdownRenderer } from '~/components/docs/md/MarkdownRenderer'
-import { LinkOrA } from '~/components/other/LinkOrA'
+import * as React from 'react'
+import { useOutletContext } from '@remix-run/react'
+import PrevNext from '~/components/docs/PrevNext'
+import { EditOnGithub } from '~/components/docs/EditOnGithub'
+import { IndexedArticle } from '~/components/docs/IndexedArticle'
+import RightMenu from '~/components/docs/RightMenu'
 
 export function Doc({
   title,
@@ -17,37 +20,23 @@ export function Doc({
   branch: string
   filePath: string
 }) {
+  const { prevItem, nextItem } = useOutletContext<any>()
+
   return (
-    <article className="p-4 lg:p-6 overflow-auto w-full">
-      {(title || section) && (
-        <header className="space-y-1">
-          {section && (
-            <p className="font-display text-sm font-medium text-sky-500">
-              {section}
-            </p>
-          )}
-          {title && (
-            <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
-              {title}
-            </h1>
-          )}
-        </header>
-      )}
-      <div className="h-9" />
-      <div className="h-px bg-gray-500 opacity-20" />
-      <div className="h-9" />
-      <MarkdownRenderer>{content}</MarkdownRenderer>
-      <div className="h-12" />
-      <div className="w-full h-px bg-gray-500 opacity-30" />
-      <div className="py-4 opacity-70">
-        <LinkOrA
-          to={`https://github.com/${repo}/tree/${branch}/${filePath}`}
-          className="flex items-center gap-2"
-        >
-          <FaEdit /> Edit on GitHub
-        </LinkOrA>
+    <>
+      <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
+        {section && (
+          <p className="font-display text-sm font-medium text-sky-500">
+            {section}
+          </p>
+        )}
+        <IndexedArticle title={title} section={section} content={content} />
+        <div className="w-full h-px bg-gray-500 opacity-30" />
+        <EditOnGithub repo={repo} branch={branch} filePath={filePath} />
+        <div className="h-8" />
+        <PrevNext prevItem={prevItem} nextItem={nextItem} />
       </div>
-      <div className="h-24" />
-    </article>
+      <RightMenu content={content} />
+    </>
   )
 }

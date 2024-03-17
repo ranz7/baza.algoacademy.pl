@@ -12,6 +12,8 @@ import { useLocation } from '@remix-run/react'
 import MdLatex from '~/components/docs/md/MdLatex'
 import MdBigLatex from '~/components/docs/md/MdBigLatex'
 
+var slugify = require('slugify')
+
 const CustomHeading = ({
   Comp,
   id,
@@ -22,15 +24,17 @@ const CustomHeading = ({
   const [copied, setCopied] = useState(false)
   const location = useLocation()
 
-  if (id && ['h1', 'h2'].includes(Comp)) {
+  if (props?.children[0] && ['h1', 'h2'].includes(Comp)) {
+    id = slugify(props.children[0] as string, { lower: true })
+    const hash = `#${id}`
     return (
       <a
-        href={`#${id}`}
+        href={hash}
         onClick={(e) => {
           e.preventDefault()
           setCopied(true)
           navigator.clipboard.writeText(
-            window.location.href.replace(location.hash, `#${id}`)
+            window.location.href.replace(location.hash, '') + hash
           )
           setTimeout(() => setCopied(false), 1000)
         }}

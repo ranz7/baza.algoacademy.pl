@@ -10,6 +10,7 @@ import { seo } from '~/utils/seo'
 import { getAlgoAcademyConfig } from '~/utils/config'
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node'
 import { DocsLayout } from '~/components/docs/DocsLayout'
+import useNavigationConfig from '~/components/docs/hooks/useNavigationConfig'
 
 export const loader = async (context: LoaderFunctionArgs) => {
   const { version } = context.params
@@ -31,18 +32,19 @@ export const meta: MetaFunction = () => {
 }
 
 export default function DocsRoute() {
-  const { version, config } = useLoaderData<typeof loader>()
+  const { config } = useLoaderData<typeof loader>()
+  const { navigation, prevItem, nextItem } = useNavigationConfig({
+    config,
+    repo,
+  })
 
   return (
     <DocsLayout
       name="SUBJECT_NAME"
-      colorFrom={colorFrom}
-      colorTo={colorTo}
-      textColor={textColor}
-      config={config}
-      repo={repo}
+      palete={{ colorFrom, colorTo, textColor }}
+      navigation={navigation}
     >
-      <Outlet />
+      <Outlet context={{ prevItem, nextItem }} />
     </DocsLayout>
   )
 }

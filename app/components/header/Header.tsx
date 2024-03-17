@@ -56,11 +56,11 @@ export default function Header(props: Props) {
             className="hidden h-8 dark:hidden lg:block"
           />
         </a>
-        <Link to="../../" className={`font-bold`}>
+        <Link to="/" className={`font-bold hidden lg:block`}>
           <span className={`${gradientText} mt-1`}>{name}</span>
         </Link>
       </div>
-      <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
+      <div className="-my-5 mr-8 md:mr-0">
         <Search />
       </div>
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">

@@ -1,10 +1,9 @@
 import { LinkOrA } from '~/components/other/LinkOrA'
 import * as React from 'react'
 
-const PrevNext = ({ children, prevItem, nextItem }: any) => {
+const PrevNext = ({ prevItem, nextItem }: any) => {
   return (
-    <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
-      {children}
+    <div>
       {(prevItem || nextItem) && (
         <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
           {prevItem && (
