@@ -6,4 +6,5 @@ module.exports = {
   // publicPath: "/build/",
   // serverBuildPath: "build/index.js",
   serverModuleFormat: 'cjs',
+  browserNodeBuiltinsPolyfill: { modules: { querystring: true } }
 }
