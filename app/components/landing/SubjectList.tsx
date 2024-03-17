@@ -86,7 +86,7 @@ const SubjectList = () => {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-0 lg:gap-x-8">
           {actions.map((product) => (
-            <LinkOrA to={'/SUBJECT_NAME'}>
+            <LinkOrA key={product.name} to={'/SUBJECT_NAME'}>
               <div
                 key={product.name}
                 className="group my-5 border-2 p-3 relative neon-hover border-gray-100 min-h-20"
@@ -95,7 +95,7 @@ const SubjectList = () => {
                   <h3 className="text-base flex-1 font-semibold text-gray-900">
                     {product.name}
                   </h3>
-                  <product.icon />
+                  <product.icon color="black" />
                 </div>
                 <p className="mt-1 text-sm text-gray-500">
                   {product.description}

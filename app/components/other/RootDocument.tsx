@@ -1,5 +1,12 @@
 import * as React from 'react'
-import { Links, LiveReload, Meta, Scripts, ScrollRestoration, useMatches } from '@remix-run/react'
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Scripts,
+  ScrollRestoration,
+  useMatches,
+} from '@remix-run/react'
 
 import { Analytics } from '@vercel/analytics/react'
 
@@ -39,20 +46,12 @@ export const dangerousHtmlScript = `
   }).observe(document.documentElement, { attributeFilter: ['data-theme'], attributeOldValue: true })
 
   isDarkMode.addEventListener('change', () => updateThemeWithoutTransitions())
-
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JMT1Z50SPS');
-  
 `
 
 export function RootDocument({
-                               children,
-                               title
-                             }: {
+  children,
+  title,
+}: {
   children: React.ReactNode
   title?: string
 }) {
@@ -61,32 +60,33 @@ export function RootDocument({
 
   return (
     // <html lang="en" className={cx(getGlobalStyles())}>
-    <html lang='en' className="h-full antialiased [font-feature-settings:'ss01']">
-    <head>
-      {/* {styles} */}
-      {matches.find((d) => d.handle?.baseParent) ? (
-        <base target='_parent' />
-      ) : null}
-      {title ? <title>{title}</title> : null}
-      <meta charSet='utf-8' />
-      <meta name='viewport' content='width=device-width, initial-scale=1' />
-      <Meta />
-      <Links />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: dangerousHtmlScript
-        }}
-      ></script>
-    </head>
-    <body className='vsc-initialized flex min-h-full bg-white dark:bg-slate-900'>
-    <div className='flex w-full flex-col'>
-      {children}
-    </div>
-    <ScrollRestoration />
-    <Scripts />
-    <LiveReload />
-    <Analytics />
-    </body>
+    <html
+      lang="en"
+      className="h-full antialiased [font-feature-settings:'ss01']"
+    >
+      <head>
+        {/* {styles} */}
+        {matches.find((d) => d.handle?.baseParent) ? (
+          <base target="_parent" />
+        ) : null}
+        {title ? <title>{title}</title> : null}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: dangerousHtmlScript,
+          }}
+        ></script>
+      </head>
+      <body className="vsc-initialized flex min-h-full bg-white dark:bg-slate-900">
+        <div className="flex w-full flex-col">{children}</div>
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+        <Analytics />
+      </body>
     </html>
   )
 }

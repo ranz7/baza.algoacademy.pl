@@ -20,16 +20,7 @@ export const meta: MetaFunction = () => {
 export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
-    {
-      rel: 'stylesheet',
-      href: prismThemeLight,
-      media: '(prefers-color-scheme: light)',
-    },
-    {
-      rel: 'stylesheet',
-      href: prismThemeDark,
-      media: '(prefers-color-scheme: dark)',
-    },
+
     {
       rel: 'stylesheet',
       href: styles,
@@ -61,6 +52,14 @@ export const links: LinksFunction = () => {
     },
     { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
     { rel: 'icon', href: '/favicon.ico' },
+    {
+      rel: 'stylesheet',
+      href: prismThemeDark,
+    },
+    {
+      rel: 'stylesheet',
+      href: prismThemeLight,
+    },
   ]
 }
 

@@ -16,7 +16,7 @@ Prism.languages.vue = Prism.languages.markup
 svelteHighlighter()
 
 function getLanguageFromClassName(className: string) {
-  const match = className.match(/language-(\w+)/)
+  const match = className.match(/lang-(\w+)/)
   return match ? match[1] : ''
 }
 
@@ -26,13 +26,13 @@ function isLanguageSupported(lang: string): lang is Language {
 
 type Props = {
   children: ReactNode
+  className: string
 }
 
-export const CodeBlock = ({ children }: Props) => {
+export const CodeBlock = ({ children, className: preClassName }: Props) => {
   invariant(!!children, 'children is required')
   const [copied, setCopied] = useState(false)
   const child = Array.isArray(children) ? children[0] : children
-  console.log(JSON.stringify(children.className))
   const className = child.props.className || ''
   const userLang = getLanguageFromClassName(className)
   const lang = isLanguageSupported(userLang) ? userLang : 'bash'
@@ -58,12 +58,12 @@ export const CodeBlock = ({ children }: Props) => {
       </button>
       <div className="relative not-prose">
         <div
-          className="absolute bg-white text-sm z-10 border border-gray-300 px-2 rounded-md -top-3 right-2
-            dark:bg-gray-600 dark:border-0"
+          className="absolute bg-white text-sm z-10 px-2 rounded-md -top-3 right-2
+            dark:bg-gray-600 border-0"
         >
           {lang}
         </div>
-        <div className="rounded-md font-normal w-full border border-gray-200 dark:border-0">
+        <div className="rounded-md font-normal w-full border-0">
           <Highlight code={code.trim()} language={lang}>
             {({ className, tokens, getLineProps, getTokenProps }) => (
               <pre className={`overflow-scroll ${className}`} style={{}}>
