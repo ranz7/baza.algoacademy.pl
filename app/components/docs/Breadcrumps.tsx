@@ -33,7 +33,7 @@ export default function Breadcrumps({
         </li>
 
         <ChevronRightIcon
-          className="h-5 w-5 flex-shrink-0 text-gray-400"
+          className="h-5 w-5 flex-shrink-0 text-gray-400 hidden lg:block"
           aria-hidden="true"
         />
 
@@ -41,7 +41,8 @@ export default function Breadcrumps({
           <span
             className={`text-2xl font-bold bg-clip-text bg-gradient-to-r ${from} ${to}  text-transparent`}
           >
-            Baza {path}
+            <span className={'hidden lg:contents'}>Baza</span>{' '}
+            {path || <span className={'lg:hidden'}>Baza</span>}
           </span>
         </a>
       </ol>
