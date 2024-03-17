@@ -2,7 +2,7 @@ import discordImage from '~/images/discord-logo-white.svg'
 
 const DiscordPromo = () => {
   return (
-    <div className="px-4 py-20 mx-auto max-w-screen-lg">
+    <div className="px-4 py-10 mx-auto max-w-screen-lg">
       <div
         className={`
         bg-aablue

@@ -12,9 +12,10 @@ import { DefaultCatchBoundary } from '~/components/other/DefaultCatchBoundary'
 export const meta: MetaFunction = () => {
   return seo({
     title:
-      'Baza AlgoAcademy | Rewolucjonizujemy edukację informatyczną w Polsce',
-    description: `Rewolucjonizujemy edukację informatyczną w Polsce.`,
-    keywords: 'Algorytmy, Programowanie, Edukacja, Informatyka, AlgoAcademy',
+      'AlgoAcademy: Transformujemy Naukę Informatyki w Polsce | Nauka Algorytmów i Programowania',
+    description: `Dołącz do AlgoAcademy i odkryj nową erę nauki informatyki w Polsce. Nasze kursy z algorytmów i programowania są projektowane, by inspirować i rozwijać przyszłe pokolenia specjalistów IT. Stań się częścią rewolucji edukacyjnej już dziś.`,
+    keywords:
+      'Algorytmy, Programowanie, Edukacja informatyczna, Nauka informatyki, Kursy IT, Rozwój umiejętności IT, AlgoAcademy Polska, Innowacje w edukacji, Programowanie dla początkujących, Zaawansowane algorytmy',
   })
 }
 

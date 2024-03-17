@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Header from '~/components/header/Header'
 import NavigationMenu from '~/components/docs/LeftMenu'
+import AAFooter from '~/components/common/Footer'
 
 type DocsLayoutProps = {
   name: string
@@ -17,11 +18,18 @@ export function DocsLayout({
 }: DocsLayoutProps) {
   return (
     <div>
-      <Header navigation={navigation} name={name} />
+      <Header
+        navigation={navigation}
+        name={name}
+        colorFrom={palete.colorFrom}
+        colorTo={palete.colorTo}
+      />
       <div className="relative mx-auto flex w-full max-w-8xl flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
         <NavigationMenu name={name} navigation={navigation} palete={palete} />
+
         {children}
       </div>
+      <AAFooter />
     </div>
   )
 }

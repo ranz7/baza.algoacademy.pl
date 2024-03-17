@@ -15,6 +15,7 @@
   "dependencies": {
     "@docsearch/css": "^3.6.0",
     "@docsearch/react": "^3.6.0",
+    "@emailjs/browser": "^4.3.3",
     "@headlessui/react": "1.7.17",
     "@heroicons/react": "^2.1.1",
     "@octokit/graphql": "^7.0.2",
@@ -40,6 +41,7 @@
     "qss": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.1",
     "react-icons": "^4.12.0",
     "react-latex": "^2.0.0",
     "react-youtube": "^10.1.0",

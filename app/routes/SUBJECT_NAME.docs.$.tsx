@@ -21,21 +21,21 @@ export const loader = async (context: LoaderFunctionArgs) => {
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return seo({
-    title: `${data?.title ?? 'Docs'} | Algo Academy SUBJECT_NAME Docs`,
-    description: data?.description,
+    title: `${data?.title} ${data?.subject} | Baza AlgoAcademy`,
+    description: `${data?.description}`,
+    keywords: `${data?.keywords}, Algorytmy, Programowanie, Edukacja informatyczna, Nauka informatyki, Kursy IT, Rozwój umiejętności IT, AlgoAcademy Polska, Innowacje w edukacji, Programowanie dla początkujących, Zaawansowane algorytmy`,
   })
 }
 
 export const ErrorBoundary = DefaultErrorBoundary
 
 export default function Docs() {
-  const { title, content, filePath, section } = useLoaderData<typeof loader>()
+  const { title, content, filePath } = useLoaderData<typeof loader>()
   const { version } = useParams()
   const branch = getBranch(version)
   return (
     <Doc
       title={title}
-      section={section}
       content={content}
       repo={repo}
       branch={branch}

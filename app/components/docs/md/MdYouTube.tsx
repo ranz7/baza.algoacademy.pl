@@ -13,21 +13,22 @@ const YoutubeEmbed = ({
   title?: string
 }) => {
   return (
-    <span className="flex-col my-5 video-responsive flex justify-center m-auto">
-      <YouTube
-        videoId={linkOrId} // defaults -> ''
-        title={'string'} // defaults -> ''
-        opts={{
-          playerVars: {
-            rel: 0,
-            color: 'white',
-            playsinline: 0,
-            start: Number(startSeconds),
-            end: Number(endSeconds),
-          },
-        }}
-        className="self-center"
-      />
+    <span className="flex-col my-5 flex justify-center m-auto ">
+      <span className="self-center w-full responsive-iframe-container">
+        <YouTube
+          videoId={linkOrId} // defaults -> ''
+          title={'string'} // defaults -> ''
+          opts={{
+            playerVars: {
+              rel: 0,
+              color: 'white',
+              playsinline: 0,
+              start: Number(startSeconds),
+              end: Number(endSeconds),
+            },
+          }}
+        />
+      </span>
       {title && <span className="self-center ">{title}</span>}
     </span>
   )

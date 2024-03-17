@@ -130,6 +130,7 @@ export async function fetchRepoFile(
   ref: string,
   filepath: string
 ) {
+  repoPair = 'AlgoAcademyPL/' + repoPair
   const key = `${repoPair}:${ref}:${filepath}`
   let [owner, repo] = repoPair.split('/')
 

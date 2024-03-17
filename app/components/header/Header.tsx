@@ -1,10 +1,11 @@
 import clsx from 'clsx'
+import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
-import { Link } from '@remix-run/react'
 import { MobileNavigation } from '~/components/header/MobileNavigation'
 import { Search } from '~/components/header/Search'
 import { ThemeSelector } from '~/components/header/ThemeSelector'
+import Breadcrumps from '~/components/docs/Breadcrumps'
 
 type Props = {
   name?: string
@@ -29,8 +30,6 @@ export default function Header(props: Props) {
   }, [])
   const { name, colorFrom, colorTo, navigation } = props
 
-  const gradientText = `inline-block text-transparent bg-clip-text bg-gradient-to-r ${colorFrom} ${colorTo}`
-
   return (
     <header
       className={clsx(
@@ -45,25 +44,11 @@ export default function Header(props: Props) {
           <MobileNavigation navigation={navigation} />
         </div>
       )}
-      <div className="relative flex flex-grow basis-0 items-center">
-        <a href="/" aria-label="Home page" className="pr-5">
-          <img
-            src="/algo-academy-logo-white.png"
-            className="hidden h-8 dark:lg:block"
-          />
-          <img
-            src="/algo-academy-logo-dark.png"
-            className="hidden h-8 dark:hidden lg:block"
-          />
-        </a>
-        <Link to="/" className={`font-bold hidden lg:block`}>
-          <span className={`${gradientText} mt-1`}>{name}</span>
-        </Link>
-      </div>
-      <div className="-my-5 mr-8 md:mr-0">
-        <Search />
+      <div className="relative flex flex-grow   items-center">
+        <Breadcrumps from={colorFrom} to={colorTo} />
       </div>
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
+        <Search />
         <ThemeSelector className="relative z-10" />
         <a
           href="https://github.com/AlgoAcademyPL/"

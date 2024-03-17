@@ -41,9 +41,11 @@ export async function loadDocs({
     {
       title: frontMatter.data?.title,
       section: frontMatter.data?.section,
+      keywords: frontMatter.data?.keywords,
       description,
       filePath,
       content: frontMatter.content,
+      subject: repo,
     },
     {
       headers: {

@@ -84,7 +84,7 @@ const SubjectList = () => {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-0 lg:gap-x-8">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 sm:gap-x-6 gap-y-0 lg:gap-x-8">
           {actions.map((product) => (
             <LinkOrA key={product.name} to={'/SUBJECT_NAME'}>
               <div

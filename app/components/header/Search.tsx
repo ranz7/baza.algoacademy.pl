@@ -54,7 +54,7 @@ export function Search(props: DocSearchProps) {
       translations={translations}
       placeholder={'Czego szukasz?'}
       getMissingResultsUrl={({}) => {
-        return `https://algo.academy/kontakt`
+        return `https://algoacademy.pl/kontakt`
       }}
       resultsFooterComponent={({ state }) => {
         return <h1>{state.context.nbHits} znajdziono!</h1>
