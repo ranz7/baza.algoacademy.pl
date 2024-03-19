@@ -13,7 +13,7 @@
   "selectors": {
     "SUBJECT_NAME": {
       "lvl0": {
-        "selector": "  ",
+        "selector": "",
         "default_value": "SUBJECT NAME"
       },
       "lvl1": "article h1",
@@ -24,7 +24,7 @@
     },
     "default": {
       "lvl0": {
-        "selector": "  ",
+        "selector": "",
         "default_value": "Artykuł"
       },
       "lvl1": "article h1",
