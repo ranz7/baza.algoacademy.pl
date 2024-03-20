@@ -5,7 +5,7 @@ import AAFooter from '~/components/common/Footer'
 
 type DocsLayoutProps = {
   name: string
-  palete: { colorFrom: string; colorTo: string; textColor: string }
+  palete: { gradient: string; textColor: string }
   children: React.ReactNode
   navigation: any
 }
@@ -18,12 +18,7 @@ export function DocsLayout({
 }: DocsLayoutProps) {
   return (
     <div>
-      <Header
-        navigation={navigation}
-        name={name}
-        colorFrom={palete.colorFrom}
-        colorTo={palete.colorTo}
-      />
+      <Header navigation={navigation} name={name} gradient={palete.gradient} />
       <div className="relative mx-auto flex w-full max-w-8xl flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
         <NavigationMenu name={name} navigation={navigation} palete={palete} />
 

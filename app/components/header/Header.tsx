@@ -9,8 +9,7 @@ import Breadcrumps from '~/components/docs/Breadcrumps'
 
 type Props = {
   name?: string
-  colorFrom?: string
-  colorTo?: string
+  gradient?: string
   navigation?: any
 }
 
@@ -28,7 +27,7 @@ export default function Header(props: Props) {
       window.removeEventListener('scroll', onScroll)
     }
   }, [])
-  const { name, colorFrom, colorTo, navigation } = props
+  const { name, gradient, navigation } = props
 
   return (
     <header
@@ -45,7 +44,7 @@ export default function Header(props: Props) {
         </div>
       )}
       <div className="relative flex flex-grow   items-center">
-        <Breadcrumps from={colorFrom} to={colorTo} />
+        <Breadcrumps gradient={gradient} />
       </div>
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 items-center md:flex-grow">
         <Search />

@@ -2,13 +2,7 @@ import * as React from 'react'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { useLocation } from '@remix-run/react'
 
-export default function Breadcrumps({
-  from = 'from-sky-500',
-  to = 'to-fuchsia-500',
-}: {
-  from?: string
-  to?: string
-}) {
+export default function Breadcrumps({ gradient }: { gradient?: string }) {
   const location = useLocation()
   const path = location.pathname.split('/')[1]
 
@@ -39,7 +33,7 @@ export default function Breadcrumps({
 
         <a href="/" aria-label="Home page">
           <span
-            className={`text-2xl font-bold bg-clip-text bg-gradient-to-r ${from} ${to}  text-transparent`}
+            className={`text-2xl font-bold bg-clip-text bg-gradient-to-r ${gradient}  text-transparent`}
           >
             <span className={'hidden lg:contents'}>Baza</span>{' '}
             {path || <span className={'lg:hidden'}>Baza</span>}

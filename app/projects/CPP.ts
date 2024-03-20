@@ -3,8 +3,7 @@ export const repo = 'CPP'
 export const latestBranch = 'main'
 export const latestVersion = 'v0'
 
-export const colorFrom = 'from-fuchsia-500'
-export const colorTo = ' to-cyan-500'
+export const gradient = 'from-amber-500 to-violet-400'
 export const textColor = 'text-emerald-500'
 
 export function getBranch(argVersion?: string) {

@@ -10,6 +10,10 @@ import { TbBinaryTree } from 'react-icons/tb'
 import { AiOutlineRobot } from 'react-icons/ai'
 import { BiBrain } from 'react-icons/bi'
 import { LinkOrA } from '~/components/other/LinkOrA'
+import { gradient as AISDgradient } from '~/projects/AISD'
+import { gradient as CPPgradient } from '~/projects/CPP'
+import { gradient as OIgradient } from '~/projects/OI'
+import { gradient as OIJgradient } from '~/projects/OIJ'
 
 const actions = [
   {
@@ -17,6 +21,7 @@ const actions = [
     description: 'Idealny do systemów wbudowanych i programowania systemowego.',
     href: '',
     icon: CLogo,
+    gradient: 'from-gray-500 to-neutral-500',
   },
   {
     name: 'Olimpiada Informatyczna Juniorów',
@@ -24,12 +29,14 @@ const actions = [
       'Poznaj tajniki złożonych problemów algorytmicznych i zdobądź tytuł',
     href: '/OIJ',
     icon: OIJLogo,
+    gradient: OIJgradient,
   },
   {
     name: 'Język C++',
     description: 'Idealny dla programów, gdzie szybkość ma znaczenie',
     href: 'CPP',
     icon: CppLogo,
+    gradient: CPPgradient,
   },
   {
     name: 'Olimpiada Informatyczna',
@@ -37,6 +44,7 @@ const actions = [
       'Odnieś sukces w najbardziej cenionym konkursie informatycznym w Polsce',
     href: 'OI',
     icon: OILogo,
+    gradient: OIgradient,
   },
   {
     name: 'Język Python',
@@ -44,6 +52,7 @@ const actions = [
       'Idealny do analizy danych, systemów inteligentych i automatyzacji',
     href: '',
     icon: SiPython,
+    gradient: 'from-gray-500 to-neutral-500',
   },
   {
     name: 'Algorytmy i Struktury Danych',
@@ -51,6 +60,7 @@ const actions = [
       'Zrozum podstawy wydajności programów i zabłyśnij na interview',
     href: 'AISD',
     icon: TbBinaryTree,
+    gradient: AISDgradient,
   },
   {
     name: 'Język JavaScript',
@@ -58,6 +68,7 @@ const actions = [
       'Idealny do tworzenia interaktywnych aplikacji i technologii webowych',
     href: '',
     icon: JsLogo,
+    gradient: 'from-gray-500 to-neutral-500',
   },
   {
     name: 'Sztuczna Inteligencja',
@@ -65,18 +76,21 @@ const actions = [
       'Naucz się najbardziej dynamicznie rozwijającej się technologii',
     href: '',
     icon: AiOutlineRobot,
+    gradient: 'from-gray-500 to-neutral-500',
   },
   {
     name: 'Język SQL',
     description: 'Idealny do tworzenia i manipulacji bazami danych',
     href: '',
     icon: SqlLogo,
+    gradient: 'from-gray-500 to-neutral-500',
   },
   {
     name: 'Efektywna Nauka',
     description: 'Poznaj techniki wydajnej nauki i zwiększ swoją produktywność',
     href: '',
     icon: BiBrain,
+    gradient: 'from-gray-500 to-neutral-500',
   },
 ]
 
@@ -96,7 +110,10 @@ const SubjectList = () => {
                 className="group my-5 border-2 p-3 relative neon-hover border-gray-100 min-h-20"
               >
                 <div className="flex items-center">
-                  <h3 className="text-base flex-1 font-semibold text-gray-900">
+                  <h3
+                    className={`text-base flex-1 font-semibold  
+                    bg-gradient-to-r ${product.gradient} bg-clip-text text-transparent`}
+                  >
                     {product.name}
                   </h3>
                   <product.icon color="black" />
