@@ -2,6 +2,12 @@
     position: fixed;
 }
 
+@media (min-width: 768px) {
+    .DocSearch-Button {
+        width: 250px;
+    }
+}
+
 .responsive-iframe-container div {
     position: relative;
     overflow: hidden;

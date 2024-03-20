@@ -1,4 +1,3 @@
-import type { DocSearchProps } from '@docsearch/react'
 import { DocSearch } from '@docsearch/react'
 
 const translations = {
@@ -45,7 +44,7 @@ const translations = {
   },
 }
 
-export function Search(props: DocSearchProps) {
+export function Search() {
   return (
     <DocSearch
       appId="WJ306HP6G5"
