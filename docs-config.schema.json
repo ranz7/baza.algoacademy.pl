@@ -5,33 +5,12 @@
   "description": "Config file for the documentation of a algo academy project.",
   "type": "object",
   "required": [
-    "docSearch",
     "menu"
   ],
   "additionalProperties": false,
   "properties": {
     "$schema": {
       "type": "string"
-    },
-    "docSearch": {
-      "description": "Data for Algolia Search.",
-      "type": "object",
-      "required": [
-        "appId",
-        "apiKey",
-        "indexName"
-      ],
-      "properties": {
-        "appId": {
-          "type": "string"
-        },
-        "apiKey": {
-          "type": "string"
-        },
-        "indexName": {
-          "type": "string"
-        }
-      }
     },
     "menu": {
       "description": "Doc pages ",

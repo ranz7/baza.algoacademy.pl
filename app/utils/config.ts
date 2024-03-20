@@ -26,13 +26,7 @@ const menuItemSchema = z.object({
   ),
 })
 
-
 const configSchema = z.object({
-  docSearch: z.object({
-    appId: z.string(),
-    apiKey: z.string(),
-    indexName: z.string(),
-  }),
   menu: z.array(menuItemSchema),
   users: z.array(z.string()).optional(),
 })
@@ -40,8 +34,8 @@ const configSchema = z.object({
 export type ConfigSchema = z.infer<typeof configSchema>
 
 /**
-  Fetch the config file for the project and validate it.
-  */
+ Fetch the config file for the project and validate it.
+ */
 export async function getAlgoAcademyConfig(repo: string, branch: string) {
   const config = await fetchRepoFile(repo, branch, `docs/config.json`)
 
@@ -51,7 +45,9 @@ export async function getAlgoAcademyConfig(repo: string, branch: string) {
 
   try {
     const algoAcademyDocsConfigFromJson = JSON.parse(config)
-    const validationResult = configSchema.safeParse(algoAcademyDocsConfigFromJson)
+    const validationResult = configSchema.safeParse(
+      algoAcademyDocsConfigFromJson
+    )
 
     if (!validationResult.success) {
       // Log the issues that come up during validation

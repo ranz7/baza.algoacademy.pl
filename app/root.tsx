@@ -5,7 +5,7 @@ import {
   useRouteError,
 } from '@remix-run/react'
 import styles from '~/styles/tailwind.css'
-import docSearchStyles from '@docsearch/css/dist/style.css'
+import docSearchStyles from '~/styles/docsearch.css'
 import prismThemeLight from '~/styles/prismThemeLight.css'
 import prismThemeDark from '~/styles/prismThemeDark.css'
 import custom from '~/styles/custom.css'

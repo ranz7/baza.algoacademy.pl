@@ -8,7 +8,8 @@
     }
 }
 
-.responsive-iframe-container div {
+.responsive-iframe-container span {
+    display: block;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -16,7 +17,7 @@
 }
 
 /* Then style the iframe to fit in the container div with full height and width */
-.responsive-iframe-container div iframe {
+.responsive-iframe-container span iframe {
     position: absolute;
     top: 0;
     left: 0;

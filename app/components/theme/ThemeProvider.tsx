@@ -46,10 +46,6 @@ const clientThemeCode = `
     );
   }
 })();
-
-
-
-
 `
 
 const themes: Array<Theme> = Object.values(Theme)
@@ -112,6 +108,7 @@ function ThemeProvider({
     const handleChange = () => {
       setTheme(mediaQuery.matches ? Theme.DARK : Theme.LIGHT)
     }
+    // data-theme
     mediaQuery.addEventListener('change', handleChange)
     return () => mediaQuery.removeEventListener('change', handleChange)
   }, [])
