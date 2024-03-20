@@ -1,10 +1,11 @@
 import * as React from 'react'
+import { useEffect } from 'react'
 import {
   Links,
   LiveReload,
   Meta,
   Scripts,
-  ScrollRestoration,
+  useLocation,
   useMatches,
 } from '@remix-run/react'
 
@@ -25,6 +26,19 @@ export function RootDocument({
   theme?: Theme | null
 }) {
   const matches = useMatches()
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash)
+      if (el) {
+        el.scrollIntoView()
+      }
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [location])
+
   return (
     // <html lang="en" className={cx(getGlobalStyles())}>
     <html
@@ -48,7 +62,6 @@ export function RootDocument({
       </head>
       <body className="vsc-initialized flex min-h-full bg-white dark:bg-slate-900">
         <div className="flex w-full flex-col">{children}</div>
-        <ScrollRestoration />
         <Scripts />
         <LiveReload />
         <Analytics />
