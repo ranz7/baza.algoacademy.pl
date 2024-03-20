@@ -2,6 +2,7 @@ import * as React from 'react'
 import Header from '~/components/header/Header'
 import NavigationMenu from '~/components/docs/LeftMenu'
 import AAFooter from '~/components/common/Footer'
+import Baner from '~/components/landing/Baner'
 
 type DocsLayoutProps = {
   palete: { gradient: string; textColor: string }
@@ -18,6 +19,7 @@ export function DocsLayout({
 }: DocsLayoutProps) {
   return (
     <div>
+      <Baner />
       <Header
         navigation={navigation}
         gradient={palete.gradient}

@@ -3,7 +3,7 @@ import React from 'react'
 const YoutubeEmbed = ({
   linkOrId,
   title,
-  startSeconds = '-1',
+  startSeconds = '0',
   endSeconds = '-1',
 }: {
   linkOrId: string
@@ -19,9 +19,7 @@ const YoutubeEmbed = ({
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             width="640"
             height="360"
-            src={`https://www.youtube.com/embed/${linkOrId}?rel=0&amp;color=white&amp;playsinline=0&amp;start=${
-              startSeconds || 0
-            }&amp;end=${endSeconds || -1}&amp;enablejsapi=1&amp`}
+            src={`https://www.youtube.com/embed/${linkOrId}?rel=0&amp;color=white&amp;playsinline=0&amp;start=${startSeconds}&amp;end=${endSeconds}&amp;enablejsapi=1&amp`}
           ></iframe>
         </span>
       </span>
