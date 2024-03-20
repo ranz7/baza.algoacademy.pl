@@ -1,4 +1,5 @@
 export const repo = 'CPP'
+export const shortName = 'C++'
 
 export const latestBranch = 'main'
 export const latestVersion = 'v0'

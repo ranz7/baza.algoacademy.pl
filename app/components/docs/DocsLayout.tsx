@@ -4,23 +4,27 @@ import NavigationMenu from '~/components/docs/LeftMenu'
 import AAFooter from '~/components/common/Footer'
 
 type DocsLayoutProps = {
-  name: string
   palete: { gradient: string; textColor: string }
   children: React.ReactNode
   navigation: any
+  shortName: string
 }
 
 export function DocsLayout({
-  name,
   palete,
   children,
   navigation,
+  shortName,
 }: DocsLayoutProps) {
   return (
     <div>
-      <Header navigation={navigation} name={name} gradient={palete.gradient} />
+      <Header
+        navigation={navigation}
+        gradient={palete.gradient}
+        shortName={shortName}
+      />
       <div className="relative mx-auto flex w-full max-w-8xl flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
-        <NavigationMenu name={name} navigation={navigation} palete={palete} />
+        <NavigationMenu navigation={navigation} palete={palete} />
 
         {children}
       </div>

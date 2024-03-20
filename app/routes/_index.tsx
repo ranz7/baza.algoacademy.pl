@@ -7,7 +7,7 @@ import AAFooter from '~/components/common/Footer'
 export default function Page() {
   return (
     <div>
-      <Header />
+      <Header gradient={' to-fuchsia-500 from-sky-500'} />
       <LandingText />
       <SubjectList />
       <DiscordPromo />

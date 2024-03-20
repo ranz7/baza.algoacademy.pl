@@ -1,5 +1,5 @@
 import { json, Outlet, useLoaderData } from '@remix-run/react'
-import { getBranch, gradient, repo, textColor } from '~/projects/OIJ'
+import { getBranch, gradient, repo, shortName, textColor } from '~/projects/OIJ'
 import { getAlgoAcademyConfig } from '~/utils/config'
 import type { LoaderFunctionArgs } from '@remix-run/node'
 import { DocsLayout } from '~/components/docs/DocsLayout'
@@ -26,7 +26,7 @@ export default function DocsRoute() {
 
   return (
     <DocsLayout
-      name="OIJ"
+      shortName={shortName}
       palete={{ gradient, textColor }}
       navigation={navigation}
     >

@@ -1,4 +1,5 @@
 export const repo = 'OIJ'
+export const shortName = 'OI Juniorów'
 
 export const latestBranch = 'main'
 export const latestVersion = 'v0'

@@ -1,5 +1,11 @@
 import { json, Outlet, useLoaderData } from '@remix-run/react'
-import { getBranch, gradient, repo, textColor } from '~/projects/AISD'
+import {
+  getBranch,
+  gradient,
+  repo,
+  shortName,
+  textColor,
+} from '~/projects/AISD'
 import { getAlgoAcademyConfig } from '~/utils/config'
 import type { LoaderFunctionArgs } from '@remix-run/node'
 import { DocsLayout } from '~/components/docs/DocsLayout'
@@ -26,9 +32,9 @@ export default function DocsRoute() {
 
   return (
     <DocsLayout
-      name="AISD"
       palete={{ gradient, textColor }}
       navigation={navigation}
+      shortName={shortName}
     >
       <Outlet context={{ prevItem, currentItem, nextItem }} />
     </DocsLayout>

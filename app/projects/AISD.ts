@@ -1,4 +1,5 @@
 export const repo = 'AISD'
+export const shortName = 'Algorytmy i SD'
 
 export const latestBranch = 'main'
 export const latestVersion = 'v0'

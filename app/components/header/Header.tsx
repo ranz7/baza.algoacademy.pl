@@ -8,9 +8,9 @@ import { ThemeSelector } from '~/components/header/ThemeSelector'
 import Breadcrumps from '~/components/docs/Breadcrumps'
 
 type Props = {
-  name?: string
   gradient?: string
   navigation?: any
+  shortName?: string
 }
 
 export default function Header(props: Props) {
@@ -27,7 +27,7 @@ export default function Header(props: Props) {
       window.removeEventListener('scroll', onScroll)
     }
   }, [])
-  const { name, gradient, navigation } = props
+  const { gradient, shortName, navigation } = props
 
   return (
     <header
@@ -44,7 +44,7 @@ export default function Header(props: Props) {
         </div>
       )}
       <div className="relative flex flex-grow   items-center">
-        <Breadcrumps gradient={gradient} />
+        <Breadcrumps gradient={gradient} shortName={shortName} />
       </div>
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 items-center md:flex-grow">
         <Search />

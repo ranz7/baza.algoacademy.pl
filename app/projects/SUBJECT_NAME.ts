@@ -1,4 +1,5 @@
 export const repo = 'SUBJECT_NAME'
+export const shortName = 'SUBJECT_NAME short '
 
 export const latestBranch = 'main'
 export const latestVersion = 'v0'

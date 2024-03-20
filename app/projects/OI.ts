@@ -1,4 +1,5 @@
 export const repo = 'OI'
+export const shortName = 'Olimpiada Informatyczna'
 
 export const latestBranch = 'main'
 export const latestVersion = 'v0'

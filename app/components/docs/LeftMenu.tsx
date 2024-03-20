@@ -1,7 +1,7 @@
 import { Navigation } from '~/components/header/Navigation'
 import * as React from 'react'
 
-const LeftMenu = ({ navigation, name, palete }: any) => {
+const LeftMenu = ({ navigation }: any) => {
   return (
     <div className="hidden lg:relative lg:block lg:flex-none">
       <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
