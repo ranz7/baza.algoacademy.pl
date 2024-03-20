@@ -2,7 +2,7 @@ import discordImage from '~/images/discord-logo-white.svg'
 
 const DiscordPromo = () => {
   return (
-    <div className="px-4 py-10 mx-auto max-w-screen-lg">
+    <div className="px-4 pt-20 mx-auto max-w-screen-lg">
       <div
         className={`
         bg-aablue
@@ -19,11 +19,10 @@ const DiscordPromo = () => {
           <img alt="Discord" src={discordImage} width={300} height={300} />
         </div>
         <div className={`sm:col-span-2`}>
-          <h3 className={`text-3xl`}>Algo Academy on Discord</h3>
+          <h3 className={`text-3xl`}>Algo Academy na Discordzie</h3>
           <p className={`mt-4`}>
-            The official AlgoAcademyPL community to ask questions, network and
-            make new friends and get lightning fast news about what's coming
-            next for AlgoAcademyPL!
+            Nie wiem czy mamy swoj discord, ale zostawilem ten baner bo jest
+            ladny. Tutaj jest ewentualne miesce na promowaniei AlgoAcademyPl.
           </p>
         </div>
 
