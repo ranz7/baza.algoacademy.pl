@@ -22,7 +22,7 @@ const DiscordPromo = () => {
           <h3 className={`text-3xl`}>Algo Academy na Discordzie</h3>
           <p className={`mt-4`}>
             Nie wiem czy mamy swoj discord, ale zostawilem ten baner bo jest
-            ladny. Tutaj jest ewentualne miesce na promowaniei AlgoAcademyPl.
+            ladny. Tutaj jest ewentualne miesce na promowanie AlgoAcademyPl.
           </p>
         </div>
 
