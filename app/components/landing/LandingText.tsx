@@ -15,7 +15,7 @@ const LandingText = () => {
             mb-2
             `}
           >
-            Baza wiedzy Algo Academy
+            Baza Algo Academy
           </span>
         </h1>
       </div>

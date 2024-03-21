@@ -34,11 +34,11 @@ export default function Breadcrumps({
               <a href="https://algoacademy.pl" aria-label="Home page">
                 <img
                   src="/algo-academy-logo-white.png"
-                  className="h-8 dark:block"
+                  className="h-8  hidden dark:block"
                 />
                 <img
                   src="/algo-academy-logo-dark.png"
-                  className="h-8 dark:hidden "
+                  className="h-8 block dark:hidden "
                 />
               </a>
             </>
