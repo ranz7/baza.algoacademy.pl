@@ -1,10 +1,9 @@
 import React from 'react'
-import YouTube from 'react-youtube'
 
 const YoutubeEmbed = ({
   linkOrId,
   title,
-  startSeconds = '-1',
+  startSeconds = '0',
   endSeconds = '-1',
 }: {
   linkOrId: string
@@ -13,21 +12,17 @@ const YoutubeEmbed = ({
   title?: string
 }) => {
   return (
-    <span className="flex-col my-5 video-responsive flex justify-center m-auto">
-      <YouTube
-        videoId={linkOrId} // defaults -> ''
-        title={'string'} // defaults -> ''
-        opts={{
-          playerVars: {
-            rel: 0,
-            color: 'white',
-            playsinline: 0,
-            start: Number(startSeconds),
-            end: Number(endSeconds),
-          },
-        }}
-        className="self-center"
-      />
+    <span className="flex-col my-5 flex justify-center m-auto ">
+      <span className="self-center w-full responsive-iframe-container">
+        <span>
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            width="640"
+            height="360"
+            src={`https://www.youtube.com/embed/${linkOrId}?rel=0&amp;color=white&amp;playsinline=0&amp;start=${startSeconds}&amp;end=${endSeconds}&amp;enablejsapi=1&amp`}
+          ></iframe>
+        </span>
+      </span>
       {title && <span className="self-center ">{title}</span>}
     </span>
   )

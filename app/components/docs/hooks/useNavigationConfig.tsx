@@ -40,11 +40,13 @@ const useNavigationConfig = ({
   const index = flatMenu.findIndex((d) => d.to === relativePathname)
   const prevItem = flatMenu[index - 1]
   const nextItem = flatMenu[index + 1]
+  const currentItem = flatMenu[index]
 
   return {
     navigation: menuConfig,
     prevItem,
     nextItem,
+    currentItem,
   }
 }
 

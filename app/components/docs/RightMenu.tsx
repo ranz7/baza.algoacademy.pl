@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import clsx from 'clsx'
-import { useLocation } from '@remix-run/react'
+import { Link, useLocation } from '@remix-run/react'
 
 var slugify = require('slugify')
 
@@ -134,8 +134,8 @@ const RightMenu = ({ content }: { content: string }) => {
               {tableOfContents.map((section) => (
                 <li key={section.id}>
                   <h3>
-                    <a
-                      href={location.pathname + `#${section.id}`}
+                    <Link
+                      to={`#${section.id}`}
                       className={clsx(
                         isActive(section)
                           ? 'text-sky-500'
@@ -143,7 +143,7 @@ const RightMenu = ({ content }: { content: string }) => {
                       )}
                     >
                       {section.title}
-                    </a>
+                    </Link>
                   </h3>
                   {section.children.length > 0 && (
                     <ol
@@ -152,8 +152,8 @@ const RightMenu = ({ content }: { content: string }) => {
                     >
                       {section.children.map((subSection) => (
                         <li key={subSection.id}>
-                          <a
-                            href={location.pathname + `#${subSection.id}`}
+                          <Link
+                            to={`#${subSection.id}`}
                             className={
                               isActive(subSection)
                                 ? 'text-sky-500'
@@ -161,7 +161,7 @@ const RightMenu = ({ content }: { content: string }) => {
                             }
                           >
                             {subSection.title}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ol>

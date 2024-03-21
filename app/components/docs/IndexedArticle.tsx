@@ -3,16 +3,14 @@ import * as React from 'react'
 
 export function IndexedArticle({
   title,
-  section,
   content,
 }: {
   title: string
-  section: string
   content: string
 }) {
   return (
     <article>
-      {(title || section) && (
+      {title && (
         <header className="space-y-1">
           {title && (
             <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">

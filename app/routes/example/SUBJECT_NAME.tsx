@@ -1,16 +1,6 @@
-import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node'
+import type { LoaderFunctionArgs } from '@remix-run/node'
 import { redirect } from '@remix-run/node'
 import { Outlet } from '@remix-run/react'
-import { seo } from '~/utils/seo'
-
-export const meta: MetaFunction = () => {
-  return seo({
-    title: ' SUBJECT_NAME AlgoAcademy',
-    description: 'Headless range and multi-range slider utilities, React',
-    image:
-      'https://github.com/AlgoAcademyPL/SUBJECT_NAME/raw/main/media/header.png',
-  })
-}
 
 export const loader = async (context: LoaderFunctionArgs) => {
   if (

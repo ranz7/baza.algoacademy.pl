@@ -1,4 +1,3 @@
-import type { DocSearchProps } from '@docsearch/react'
 import { DocSearch } from '@docsearch/react'
 
 const translations = {
@@ -45,16 +44,16 @@ const translations = {
   },
 }
 
-export function Search(props: DocSearchProps) {
+export function Search() {
   return (
     <DocSearch
-      appId="R2IYF7ETH7"
-      apiKey="599cec31baffa4868cae4e79f180729b"
-      indexName="docsearch"
+      appId="WJ306HP6G5"
+      apiKey="19a0b9d838891ae0dbc39f84ca5b3714"
+      indexName="SUBJECT_NAME"
       translations={translations}
       placeholder={'Czego szukasz?'}
       getMissingResultsUrl={({}) => {
-        return `https://algo.academy/kontakt`
+        return `https://algoacademy.pl/kontakt`
       }}
       resultsFooterComponent={({ state }) => {
         return <h1>{state.context.nbHits} znajdziono!</h1>

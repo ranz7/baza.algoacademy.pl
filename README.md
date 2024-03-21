@@ -1,6 +1,6 @@
 # Welcome to baza.algoacademy.pl!
 
-Start development with 
+Start development with
 
 ```sh
 pnpm install
@@ -9,9 +9,11 @@ pnpm dev
 
 ## Editing the docs of baza.algoacademy.pl locally
 
-The documentations for all baza.algoacademy.pl projects are hosted on [https://baza.algoacademy.pl](https://baza.algoacademy.pl)
+The documentations for all baza.algoacademy.pl projects are hosted
+on [https://baza.algoacademy.pl](https://baza.algoacademy.pl)
 
-Follow these steps if you want to edit the doc pages of a project (in these steps we'll assume it's [`c`](https://github.com/AlgoAcademyPL/SUBJECT_NAME)) and preview them locally :
+Follow these steps if you want to edit the doc pages of a project (in these steps we'll assume it'
+s [`c`](https://github.com/AlgoAcademyPL/SUBJECT_NAME)) and preview them locally :
 
 1. Create a new directory called `algoacademy`.
 

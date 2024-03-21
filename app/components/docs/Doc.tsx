@@ -7,30 +7,26 @@ import RightMenu from '~/components/docs/RightMenu'
 
 export function Doc({
   title,
-  section,
   content,
   repo,
   branch,
   filePath,
 }: {
   title: string
-  section: string
   content: string
   repo: string
   branch: string
   filePath: string
 }) {
-  const { prevItem, nextItem } = useOutletContext<any>()
+  const { prevItem, currentItem, nextItem } = useOutletContext<any>()
 
   return (
     <>
       <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
-        {section && (
-          <p className="font-display text-sm font-medium text-sky-500">
-            {section}
-          </p>
-        )}
-        <IndexedArticle title={title} section={section} content={content} />
+        <p className="font-display text-sm font-medium text-sky-500">
+          {currentItem.label}
+        </p>
+        <IndexedArticle title={title} content={content} />
         <div className="w-full h-px bg-gray-500 opacity-30" />
         <EditOnGithub repo={repo} branch={branch} filePath={filePath} />
         <div className="h-8" />
