@@ -44,7 +44,7 @@ export function RootDocument({
     <html
       lang="en"
       className={clsx(
-        "h-full antialiased [font-feature-settings:'ss01'] ",
+        "h-full antialiased [font-feature-settings:'ss01' bg-transparent",
         theme || 'dark'
       )}
     >

@@ -36,9 +36,9 @@ export type ConfigSchema = z.infer<typeof configSchema>
 /**
  Fetch the config file for the project and validate it.
  */
-export async function getAlgoAcademyConfig(repo: string, branch: string) {
-  const config = await fetchRepoFile(repo, branch, `docs/config.json`)
-
+export async function getAlgoAcademyConfig(repo: string) {
+  const fetched = await fetchRepoFile(repo, `docs/config.json`)
+  const config = fetched?.text
   if (!config) {
     throw new Error('Repo docs/config.json not found!')
   }

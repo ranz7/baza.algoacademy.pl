@@ -11,6 +11,7 @@ type Props = {
   gradient?: string
   navigation?: any
   shortName?: string
+  notSticky?: boolean
 }
 
 export default function Header(props: Props) {
@@ -32,10 +33,11 @@ export default function Header(props: Props) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5  dark:shadow-none sm:px-6 lg:px-8',
+        ' justify-end z-50 flex flex-none flex-wrap items-center  bg-white px-4 py-5 shadow-md shadow-slate-900/5  dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
           ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
-          : 'dark:bg-transparent'
+          : 'dark:bg-transparent',
+        !props.notSticky && 'sticky top-0 left-0 right-0'
       )}
     >
       {navigation && (

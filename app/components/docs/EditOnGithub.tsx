@@ -4,20 +4,23 @@ import * as React from 'react'
 
 export function EditOnGithub({
   repo,
-  branch,
   filePath,
 }: {
   repo: string
-  branch: string
   filePath: string
 }) {
   return (
     <div className="py-4 opacity-70">
       <LinkOrA
-        to={`https://github.com/${repo}/tree/${branch}/${filePath}`}
+        to={`/edit?repo=${repo}&filePath=${filePath.replace(/\.md$/, '')}`}
         className="flex items-center gap-2"
       >
-        <FaEdit /> Edit on GitHub
+        <FaEdit /> Pomóż nam rozwinąć{' '}
+        <div
+          className={`font-bold bg-clip-text bg-gradient-to-r  to-fuchsia-500 from-sky-500  text-transparent`}
+        >
+          tę stronę!
+        </div>
       </LinkOrA>
     </div>
   )

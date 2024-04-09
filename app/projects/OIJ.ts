@@ -6,9 +6,3 @@ export const latestVersion = 'v0'
 
 export const gradient = 'from-emerald-400 to-cyan-400'
 export const textColor = 'text-emerald-500'
-
-export function getBranch(argVersion?: string) {
-  const version = argVersion || latestVersion
-
-  return latestBranch
-}
