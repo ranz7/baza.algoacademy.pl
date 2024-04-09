@@ -125,13 +125,9 @@ function replaceSections(
   return result
 }
 
-export async function fetchRepoFile(
-  repoPair: string,
-  ref: string,
-  filepath: string
-) {
+export async function fetchRepoFile(repoPair: string, filepath: string) {
   repoPair = 'AlgoAcademyPL/' + repoPair
-  const key = `${repoPair}:${ref}:${filepath}`
+  const key = `${repoPair}:main:${filepath}`
   let [owner, repo] = repoPair.split('/')
 
   const ttl = process.env.NODE_ENV === 'development' ? 1 : 1 * 60 * 1000 // 5 minute
@@ -166,13 +162,13 @@ export async function fetchRepoFile(
               text = replaceContent(text, originFrontmatter)
               text = replaceSections(text, originFrontmatter)
             }
-            return Promise.resolve(text)
+            return Promise.resolve({ text })
           }
           // If file has a ref to another file, cache current front-matter and load referenced file
           filepath = frontmatter.data.ref
           originFrontmatter = frontmatter
         } catch (error) {
-          return Promise.resolve(text)
+          return Promise.resolve({ text })
         }
         currentDepth++
       }

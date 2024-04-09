@@ -30,3 +30,7 @@
 .katex {
     white-space: pre-line;
 }
+
+.katex-mathml {
+    display: none;
+}

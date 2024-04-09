@@ -1,40 +1,21 @@
-import { json, redirect } from '@remix-run/node'
+import { json } from '@remix-run/node'
 import { extractFrontMatter, fetchRepoFile } from '~/utils/documents.server'
 import RemoveMarkdown from 'remove-markdown'
 
 export async function loadDocs({
   repo,
-  branch,
   docPath,
-  currentPath,
-  redirectPath,
 }: {
   repo: string
-  branch: string
   docPath: string
-  currentPath: string
-  redirectPath: string
 }) {
-  if (!branch) {
-    throw new Error('Invalid branch')
-  }
-
   if (!docPath) {
     throw new Error('Invalid docPath')
   }
-
   const filePath = `${docPath}.md`
-  const file = await fetchRepoFile(repo, branch, filePath)
+  const fetched = await fetchRepoFile(repo, filePath)
 
-  if (!file) {
-    if (currentPath === redirectPath) {
-      throw new Error('File does not exist')
-    } else {
-      throw redirect(redirectPath)
-    }
-  }
-
-  const frontMatter = extractFrontMatter(file)
+  const frontMatter = extractFrontMatter(fetched?.text ?? '')
   const description = RemoveMarkdown(frontMatter.excerpt ?? '')
 
   return json(
@@ -42,10 +23,12 @@ export async function loadDocs({
       title: frontMatter.data?.title,
       section: frontMatter.data?.section,
       keywords: frontMatter.data?.keywords,
+      readTime: frontMatter.data?.readTime,
+      updateTime: frontMatter.data?.updateTime,
       description,
       filePath,
       content: frontMatter.content,
-      subject: repo,
+      repo,
     },
     {
       headers: {

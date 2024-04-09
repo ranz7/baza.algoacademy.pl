@@ -4,9 +4,13 @@ import * as React from 'react'
 export function IndexedArticle({
   title,
   content,
+  readTime,
+  updateTime,
 }: {
-  title: string
+  title?: string
   content: string
+  readTime?: string
+  updateTime?: string
 }) {
   return (
     <article>
@@ -19,7 +23,14 @@ export function IndexedArticle({
           )}
         </header>
       )}
-      <div className="h-9" />
+      <div className="pt-3 pb-4 ">
+        <div data-nosnippet="true" className=" text-gray-500">
+          Aktualizacja: {updateTime}
+        </div>
+        <div data-nosnippet="true" className=" text-gray-500">
+          Zajmie: {readTime}
+        </div>
+      </div>
       <div className="h-px bg-gray-500 opacity-20" />
       <div className="h-9" />
       <MarkdownRenderer>{content}</MarkdownRenderer>
