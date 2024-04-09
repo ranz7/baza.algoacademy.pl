@@ -22,7 +22,6 @@ async function fetchRemote(
     `${owner}/${repo}/${ref}/${filepath}`,
     'https://raw.githubusercontent.com/'
   ).href
-  console.log(href)
   const response = await fetch(href, {
     headers: { 'User-Agent': `docs:${owner}/${repo}` },
   })

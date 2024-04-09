@@ -34,6 +34,7 @@
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "isbot": "^3.8.0",
+    "lodash.throttle": "^4.1.1",
     "lru-cache": "^7.18.3",
     "markdown-to-jsx": "^7.4.3",
     "prism-react-renderer": "^2.3.1",

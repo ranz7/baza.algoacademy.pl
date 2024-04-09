@@ -15,9 +15,9 @@ const EditNext = ({
   goPrev: () => void
 }) => {
   const stepsInit = [
-    { id: '01', name: '', status: 'complete' },
-    { id: '02', name: '', href: '#', status: 'current' },
-    { id: '03', name: '', href: '#', status: 'upcoming' },
+    { id: '01', name: 'a', status: 'complete' },
+    { id: '02', name: 'b', href: '#', status: 'current' },
+    { id: '03', name: 'c', href: '#', status: 'upcoming' },
   ]
 
   const [copied, setCopied] = useState(false)
@@ -86,6 +86,7 @@ const EditNext = ({
                 <>
                   {stepIdx === 0 ? (
                     <button
+                      key={step.name}
                       onClick={goPrev}
                       className="group flex w-full items-center"
                     >
@@ -105,6 +106,7 @@ const EditNext = ({
                     <>
                       {stepIdx === 1 ? (
                         <button
+                          key={step.name}
                           onClick={copyToClipboard}
                           className="group flex w-full items-center"
                         >
@@ -123,6 +125,7 @@ const EditNext = ({
                         </button>
                       ) : (
                         <a
+                          key={step.name}
                           href={step.href}
                           className="group flex w-full items-center"
                         >
@@ -146,6 +149,7 @@ const EditNext = ({
                 <>
                   {stepIdx === 1 ? (
                     <button
+                      key={step.name}
                       onClick={copyToClipboard}
                       className="flex items-center px-6 py-4 text-sm font-medium"
                     >
@@ -162,9 +166,11 @@ const EditNext = ({
                     </button>
                   ) : (
                     <a
+                      key={step.name}
                       href={`https://github.com/AlgoAcademyPl/${repo}/edit/main/${filePath}`}
                       className="flex items-center px-6 py-4 text-sm font-medium"
                       aria-current="step"
+                      target="_blank"
                     >
                       <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-indigo-600">
                         <span className="text-indigo-600">{step.id}</span>
@@ -177,6 +183,7 @@ const EditNext = ({
                 </>
               ) : (
                 <a
+                  key={step.name}
                   href={`https://github.com/AlgoAcademyPl/${repo}/edit/main/${filePath}`}
                   className="group flex items-center"
                 >
