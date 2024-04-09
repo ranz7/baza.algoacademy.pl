@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FaCopy, FaEdit, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaCopy, FaExternalLinkAlt } from 'react-icons/fa'
 
 import { CheckIcon } from '@heroicons/react/24/solid'
 
@@ -175,8 +175,9 @@ const EditNext = ({
                       <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-indigo-600">
                         <span className="text-indigo-600">{step.id}</span>
                       </span>
-                      <span className="ml-4 flex text-sm font-medium text-indigo-600">
-                        <FaEdit className="text-xl" /> Zaproponuj zmiany
+                      <span className="ml-4 items-center flex text-sm font-medium text-indigo-600">
+                        Zaproponuj zmiany{' '}
+                        <FaExternalLinkAlt className="ml-2 text-center text-md" />
                       </span>
                     </a>
                   )}
