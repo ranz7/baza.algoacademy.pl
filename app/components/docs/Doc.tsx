@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useOutletContext } from '@remix-run/react'
 import PrevNext from '~/components/docs/PrevNext'
-import { EditOnGithub } from '~/components/docs/EditOnGithub'
 import { IndexedArticle } from '~/components/docs/IndexedArticle'
 import RightMenu from '~/components/docs/RightMenu'
 
@@ -30,14 +29,15 @@ export function Doc({
         </p>
 
         <IndexedArticle
+          filePath={filePath}
+          repo={repo}
           readTime={readTime}
           updateTime={updateTime}
           title={title}
           content={content}
         />
         <div className="w-full h-px bg-gray-500 opacity-30" />
-        <EditOnGithub repo={repo} filePath={filePath} />
-        <div className="h-8" />
+        <div className="h-4" />
         <PrevNext prevItem={prevItem} nextItem={nextItem} />
       </div>
       <RightMenu content={content} />

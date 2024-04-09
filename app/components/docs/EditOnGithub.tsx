@@ -16,11 +16,11 @@ export function EditOnGithub({
         className="flex items-center gap-2"
       >
         <FaEdit /> Pomóż nam rozwinąć{' '}
-        <span
+        <div
           className={`font-bold bg-clip-text bg-gradient-to-r  to-fuchsia-500 from-sky-500  text-transparent`}
         >
           tę stronę!
-        </span>
+        </div>
       </LinkOrA>
     </div>
   )

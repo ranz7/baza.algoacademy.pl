@@ -175,7 +175,7 @@ const EditNext = ({
                       <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-indigo-600">
                         <span className="text-indigo-600">{step.id}</span>
                       </span>
-                      <span className="ml-4 text-sm font-medium text-indigo-600">
+                      <span className="ml-4 flex text-sm font-medium text-indigo-600">
                         <FaEdit className="text-xl" /> Zaproponuj zmiany
                       </span>
                     </a>
