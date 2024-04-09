@@ -12,14 +12,9 @@ export type DocFrontMatter = {
 /**
  * Return text content of file from remote location
  */
-async function fetchRemote(
-  owner: string,
-  repo: string,
-  ref: string,
-  filepath: string
-) {
+async function fetchRemote(owner: string, repo: string, filepath: string) {
   const href = new URL(
-    `${owner}/${repo}/${ref}/${filepath}`,
+    `${owner}/${repo}/main/${filepath}`,
     'https://raw.githubusercontent.com/'
   ).href
   const response = await fetch(href, {
@@ -144,7 +139,7 @@ export async function fetchRepoFile(repoPair: string, filepath: string) {
           if (process.env.NODE_ENV === 'development') {
             text = await fetchFs(repo, filepath)
           } else {
-            text = await fetchRemote(owner, repo, ref, filepath)
+            text = await fetchRemote(owner, repo, filepath)
           }
         } catch {
           return null
